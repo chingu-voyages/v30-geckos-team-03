@@ -9,10 +9,12 @@ function App() {
         <div className="container-border">
           <Navbar />
           <p>Search for Asteroids based on their closest approach date to Earth: </p>
-          <Searchbar placeholder="start MM/DD/YYYY"/>
-          <Searchbar placeholder="end MM/DD/YYYY" />
+          <div className="row">
+            <div className="col-md-2"><Searchbar placeholder="start MM/DD/YYYY"/></div>
+            <div className="col-md-2"><Searchbar placeholder="end MM/DD/YYYY" /></div>
+            <div className="col-md-auto"><button type="button" class="btn btn-light"><i class="fas fa-search"></i></button></div>
+          </div>
         </div>
-          
       </div>
     </div>
   );
