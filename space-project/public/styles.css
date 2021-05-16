@@ -1,5 +1,6 @@
 html {
-    background-color: #223341;
+    /* background-color: #223341; */
+    background: linear-gradient(116.82deg, rgba(34, 51, 65, 0.5) 56.42%, rgba(0, 0, 0, 0.35) 99.46%), rgba(0, 0, 0, 0.9);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -117,5 +118,19 @@ html {
     width: 90px;
     height: 28x;
     line-height: 10px;
+}
+
+/* Asteroid Cards */
+
+.ast-card {
+    position: relative;
+    width: 270px;
+    height: 190px;
+    border-radius: 15px;
+
+    margin-top: 20px;
+    padding: 10px;
+
+    background: linear-gradient(293.34deg, rgba(148, 57, 81, 0.5625) 27.35%, rgba(255, 255, 255, 0) 98.73%), #1E3485;
 }
 
