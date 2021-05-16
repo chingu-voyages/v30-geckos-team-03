@@ -12,6 +12,11 @@ html {
     font-size: 2.5rem;
 }
 
+#nav-links {
+    margin-top: 16px;
+    font-size: 1.2rem;
+}
+
 .container-fluid {
     position: relative;
 }
@@ -31,7 +36,7 @@ html {
     
 }
 
-/* Search for Dates */
+/* Searchbar */
 .searchbar {
     display: flex;
     flex-direction: row;
@@ -47,16 +52,70 @@ html {
     border-radius: 20px;
 }
 
-.btn {
+.search-button {
     border-radius: 20px;
     height: 35px;
-    width: 35px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block !important;
+    width: 40px;
+    line-height: 20px;
 }
 
-.search-btn {
+/* Asteroid Details */
+.sm-circle-img {
+    background-color:#C4C4C4;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    filter: drop-shadow(0 0 0.25rem black);    
+}
+
+.asteroid-details {
+   margin-left: 1px;
+   margin-top: 15px;
+}
+
+.astType {
+    font-size: 0.9rem;
+    color: #C4C4C4;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.distMiles {
+    font-size: 1.2rem;
+    padding: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+.km-button {
+    color: #FFFFFF;
+    background-color: #FF669D;
+    border: #FF669D;
+    margin-top: 32px;
+    border-radius: 15px;
+    height: 28px;
+    width: 70px;
+    line-height: 10px;
+}
+
+.name-description {
+    margin-top: 10px;
+    width: 35vw;
+}
+
+.more-button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    position: relative;
     
+    background: #00D189;
+    border: #00D189;
+    color: white;
+    border-radius: 15px;
+    width: 90px;
+    height: 28x;
+    line-height: 10px;
 }
 

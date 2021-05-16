@@ -9,10 +9,10 @@ function Navbar(){
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div className="navbar-nav">
-                    <a className="nav-item nav-link active" href="#">About <span class="sr-only">(current)</span></a>
-                    <a className="nav-item nav-link" href="#">Feature 1</a>
-                    <a className="nav-item nav-link" href="#">Feature 2</a>
+                <div className="navbar-nav nav-features">
+                    <a id="nav-links" className="nav-item nav-link active test" href="#">About <span class="sr-only">(current)</span></a>
+                    <a id="nav-links" className="nav-item nav-link" href="#">Feature 1</a>
+                    <a id="nav-links" className="nav-item nav-link" href="#">Feature 2</a>
                 </div>
             </div>
         </nav>
