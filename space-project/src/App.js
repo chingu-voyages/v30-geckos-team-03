@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import DateSearch from './components/DateSearch';
 import AsteroidDetails from './components/AsteroidDetails';
 import AsteroidCard from './components/AsteroidCard';
+import Image from './components/Image';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <div className="col-md-auto"><AsteroidCard name="Asteroid 2"/></div>
           </div>
           
+          <Image />
         </div>
       </div>
     </div>
