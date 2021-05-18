@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const dotenv = require('dotenv');
+//const dotenv = require('dotenv');
 const nasa_key=process.env.REACT_APP_NASA_API_KEY;
 
 export default class FetchSpaceInfo extends React.Component {
@@ -14,9 +14,10 @@ export default class FetchSpaceInfo extends React.Component {
     const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=${nasa_key}`;
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
-    const sample = data.near_earth_objects["2015-09-07"]
-    console.log("TEST", sample);
+    console.log("ALL RESPONSE DATA",data);
+    const dates = data.near_earth_objects
+    //console.log("DATES", dates);
+    for (const date in dates){console.log("DATE LIST", dates[date]);}
     this.setState({ information: data.near_earth_objects, loading: false });
     
   }

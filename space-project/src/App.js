@@ -19,15 +19,3 @@ class App extends Component {
 
 export default App;
 
-// function App() {
-//   let information='chocolate mint';
-  
-//   return (
-//     <div className="App">
-//     <p>Function Variable Data Below</p>
-//     <p>{information}</p>
-//     </div>
-//   );
-// }
-
-// export default App;
