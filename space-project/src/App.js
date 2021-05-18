@@ -1,4 +1,6 @@
 import './App.css';
+import React, { Component } from "react";
+import FetchSpaceInfo from "./FetchSpaceInfo";
 import Navbar from './components/Navbar';
 import DateSearch from './components/DateSearch';
 import AsteroidDetails from './components/AsteroidDetails';
@@ -14,6 +16,7 @@ function App() {
           <Navbar />
           <DateSearch />
           <AsteroidDetails />
+          {/* <FetchSpaceInfo /> */}
 
           <div className="row">
             <div className="col-md-auto"><AsteroidCard name="Asteroid 1"/></div>
@@ -28,3 +31,4 @@ function App() {
 }
 
 export default App;
+
