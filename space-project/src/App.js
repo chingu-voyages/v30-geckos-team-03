@@ -19,7 +19,7 @@ function App() {
           {/* <FetchSpaceInfo /> */}
 
           <div className="row">
-            <div className="col-md-auto"><AsteroidCard name="Asteroid 1"/></div>
+            <div className="col-md-auto"><AsteroidCard name="Auto Test 1"/></div>
             <div className="col-md-auto"><AsteroidCard name="Asteroid 2"/></div>
           </div>
           
