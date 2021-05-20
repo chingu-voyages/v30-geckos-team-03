@@ -15,6 +15,7 @@ function App() {
           <Navbar />
           <DateSearch />
           <AsteroidDetails />
+          {/* <FetchSpaceInfo /> */}
 
           <div className="row">
             <div className="col-md-auto"><AsteroidCard name="Asteroid 1"/></div>
@@ -29,3 +30,4 @@ function App() {
 }
 
 export default App;
+
