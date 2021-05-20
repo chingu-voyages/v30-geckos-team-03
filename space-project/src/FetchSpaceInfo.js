@@ -32,7 +32,7 @@ export default class FetchSpaceInfo extends React.Component {
     }
 
     return (
-      <div>
+      <div class="name-description">
         <div>Name: {this.state.information["2015-09-07"][0].name}</div>
         <div>JPL ID: {this.state.information["2015-09-07"][0].id}</div>
         <div>Close Approach Date: {this.state.information["2015-09-07"][0].close_approach_data[0].close_approach_date_full}</div>
