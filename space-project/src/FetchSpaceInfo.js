@@ -7,7 +7,7 @@ const nasa_key=process.env.REACT_APP_NASA_API_KEY;
 export default class FetchSpaceInfo extends React.Component {
   state = {
     loading: true,
-    person: null
+    info: null
   };
 
   async componentDidMount() {
@@ -15,9 +15,10 @@ export default class FetchSpaceInfo extends React.Component {
     const response = await fetch(url);
     const data = await response.json();
     console.log("ALL RESPONSE DATA",data);
-    const dates = data.near_earth_objects
-    //console.log("DATES", dates);
-    for (const date in dates){console.log("DATE LIST", dates[date]);}
+    const near_earth = data.near_earth_objects
+    const dates = Object.keys(near_earth);
+    console.log("DATES", dates);
+    for (const date in dates){console.log("DATES PARSED?", near_earth[dates[date]]);}
     this.setState({ information: data.near_earth_objects, loading: false });
     
   }
@@ -37,6 +38,7 @@ export default class FetchSpaceInfo extends React.Component {
         <div>JPL ID: {this.state.information["2015-09-07"][0].id}</div>
         <div>Close Approach Date: {this.state.information["2015-09-07"][0].close_approach_data[0].close_approach_date_full}</div>
         <div>Dangerous?: {this.state.information["2015-09-07"][0].is_potentially_hazardous_asteroid}</div>
+        <div>Orbiting: {this.state.information["2015-09-07"][0].close_approach_data[0].orbiting_body}</div>
         <div>Distance in Miles: {this.state.information["2015-09-07"][0].close_approach_data[0].miss_distance.miles} mi</div>
         <div>Distance in Kilometers: {this.state.information["2015-09-07"][0].close_approach_data[0].miss_distance.kilometers} km</div>
         <div>Relative Velocity Miles per Hour: {this.state.information["2015-09-07"][0].close_approach_data[0].relative_velocity.miles_per_hour}</div>
