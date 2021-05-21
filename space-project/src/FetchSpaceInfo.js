@@ -7,7 +7,7 @@ const nasa_key=process.env.REACT_APP_NASA_API_KEY;
 export default class FetchSpaceInfo extends React.Component {
   state = {
     loading: true,
-    person: null
+    info: null
   };
 
   async componentDidMount() {
