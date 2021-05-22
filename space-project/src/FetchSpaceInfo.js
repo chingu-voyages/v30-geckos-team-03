@@ -37,6 +37,7 @@ export default class FetchSpaceInfo extends React.Component {
         <div>JPL ID: {this.state.information["2015-09-07"][0].id}</div>
         <div>Close Approach Date: {this.state.information["2015-09-07"][0].close_approach_data[0].close_approach_date_full}</div>
         <div>Dangerous?: {this.state.information["2015-09-07"][0].is_potentially_hazardous_asteroid}</div>
+        <div>Orbiting: {this.state.information["2015-09-07"][0].close_approach_data[0].orbiting_body}</div>
         <div>Distance in Miles: {this.state.information["2015-09-07"][0].close_approach_data[0].miss_distance.miles} mi</div>
         <div>Distance in Kilometers: {this.state.information["2015-09-07"][0].close_approach_data[0].miss_distance.kilometers} km</div>
         <div>Relative Velocity Miles per Hour: {this.state.information["2015-09-07"][0].close_approach_data[0].relative_velocity.miles_per_hour}</div>
