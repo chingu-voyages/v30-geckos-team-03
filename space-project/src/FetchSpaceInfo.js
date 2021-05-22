@@ -16,10 +16,20 @@ export default class FetchSpaceInfo extends React.Component {
     const data = await response.json();
     console.log("ALL RESPONSE DATA",data);
     const dates = data.near_earth_objects
-    //console.log("DATES", dates);
-    for (const date in dates){console.log("DATE LIST", dates[date]);}
+    const date_keys = Object.keys(dates)
+    const date_objects = date_keys.map(function(d){return dates[d]})
+    const date_obj_keys = Object.keys(date_objects)
+    console.log("DATE OBJECT KEYS?",date_obj_keys);
+    const date_separated = date_obj_keys.map(function(dobj){return date_objects[dobj]})
+    console.log("DATES", dates);
+    console.log("KEYS", date_keys);
+    date_separated.forEach (function(item, index, array){console.log('SLICED',item);})
+    //console.log("DATE OBJECTS ARRAY", date_objects);
+    console.log("DATE ARRAY SEPARATED", date_separated);
+    //for (const date in dates){console.log("DATE LIST", dates[date]);}
     this.setState({ information: data.near_earth_objects, loading: false });
     
+  
   }
 
   render() {
