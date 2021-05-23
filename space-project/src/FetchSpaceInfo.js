@@ -28,7 +28,7 @@ export default class FetchSpaceInfo extends React.Component {
     let keys=Object.keys(dates);
     console.log('keys',keys)
     let values=Object.values(dates);
-    let trial=values.map(function(d){let myiterator=d.values(); for(let myitem of myiterator) {return "****ASTEROID INFORMATION Name: "+myitem.name
+    let astros=values.map(function(d){let myiterator=d.values(); for(let myitem of myiterator) {return "****ASTEROID INFORMATION Name: "+myitem.name
     +" Orbiting: "+myitem.close_approach_data[0].orbiting_body
     +" JPL ID: "+myitem.id
     +" Close Approach Date: "+myitem.close_approach_data[0].close_approach_date_full
@@ -41,17 +41,13 @@ export default class FetchSpaceInfo extends React.Component {
     +" Minimum Diameter in Feet: "+myitem.estimated_diameter.feet.estimated_diameter_min
     +" Maximum Diameter in Feet: "+myitem.estimated_diameter.feet.estimated_diameter_max
     +" Minimum Diameter in Meters: "+myitem.estimated_diameter.meters.estimated_diameter_min
-    +" Maximum Diameter in Meters: "+myitem.estimated_diameter.meters.estimated_diameter_max +" "} return d.length});
-    //console.log(trial);
-    let astros=trial.map(function(t){return t})
-    console.log(astros)//returns the same list as trial
+    +" Maximum Diameter in Meters: "+myitem.estimated_diameter.meters.estimated_diameter_max}; 
+    return d.length});
+    console.log('astros list',astros);
+    let astro_object_list=values.map(function(g){let newiterator=g.values(); for(let newitem of newiterator) {return newitem};});
+    console.log('astro object list',astro_object_list)
 
-
-
-    
-    
-
-    this.setState({ information: data.near_earth_objects, astros:astros, loading: false });
+    this.setState({ information: data.near_earth_objects, astros:astros, astro_object_list:astro_object_list, loading: false });
     
   
   }
