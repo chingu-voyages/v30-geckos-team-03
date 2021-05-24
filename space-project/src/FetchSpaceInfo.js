@@ -21,10 +21,14 @@ export default class FetchSpaceInfo extends React.Component {
     console.log("DATE KEYS", date_keys)
     const date_vals=Object.values(dates)
     console.log("DATE VALUES", date_vals)
-   // const date_objects = date_keys.map(function(d){return dates[d]})
-    //const date_obj_keys = Object.keys(date_objects)
-    //const date_obj_vals = Object.values(date_objects)
-    
+    let astro_list_compiled=[] //this list will provide all asteroid objects for the dates in question
+
+    for (const dv of date_vals){for (const dw of dv){astro_list_compiled.push(dw)}}
+    //"for of" loop above works to get individual objects-don't use a "for in" loop
+
+    console.log('COMPILED',astro_list_compiled);
+
+
     let keys=Object.keys(dates);
     console.log('keys',keys)
     let values=Object.values(dates);
@@ -46,8 +50,10 @@ export default class FetchSpaceInfo extends React.Component {
     console.log('astros list',astros);
     let astro_object_list=values.map(function(g){let newiterator=g.values(); for(let newitem of newiterator) {return newitem};});
     console.log('astro object list',astro_object_list)
+    let hazard=astro_list_compiled[0].is_potentially_hazardous_asteroid
+    console.log('individual object values(boolean)',hazard)
 
-    this.setState({ information: data.near_earth_objects, astros:astros, astro_object_list:astro_object_list, loading: false });
+    this.setState({ information: data.near_earth_objects, astros:astros, astro_list_compiled:astro_list_compiled, hazard:hazard, loading: false });
     
   
   }
@@ -65,7 +71,9 @@ export default class FetchSpaceInfo extends React.Component {
       <div style={{display:'flex',flexWrap:'wrap'}}// 
       >
         <div>{this.state.astros}</div>
-        
+        <div>Potentially Hazardous? Boolean:{JSON.stringify(this.state.hazard)}</div>
+        {/* <div>{JSON.stringify(this.state.astro_list_compiled)}</div> */}
+        {/* The above code works, temporarily toggled off for space/formatting issues */}
 
       </div>
     );
