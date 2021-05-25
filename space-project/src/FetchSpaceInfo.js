@@ -68,13 +68,20 @@ export default class FetchSpaceInfo extends React.Component {
     }
 
     return (
+ 
       <div style={{display:'flex',flexWrap:'wrap'}}// 
       >
         <div>{this.state.astros}</div>
         <div>Potentially Hazardous? Boolean:{JSON.stringify(this.state.hazard)}</div>
         {/* <div>{JSON.stringify(this.state.astro_list_compiled)}</div> */}
         {/* The above code works, temporarily toggled off for space/formatting issues */}
+      
 
+
+
+
+        
+ 
       </div>
     );
   }
