@@ -1,7 +1,6 @@
 import React from "react";
 import Searchbar from "./Searchbar";
 
-
 function DateSearch() {
   return (
     <div>
@@ -11,7 +10,6 @@ function DateSearch() {
       <div className="row">
         <div className="col-md-2">
           <Searchbar placeholder="start MM/DD/YYYY" />
-
         </div>
         <div className="col-md-2">
           <Searchbar placeholder="end MM/DD/YYYY" />

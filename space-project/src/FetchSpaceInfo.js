@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 //const dotenv = require('dotenv');
 const nasa_key = process.env.REACT_APP_NASA_API_KEY;
@@ -21,6 +21,7 @@ export default class FetchSpaceInfo extends React.Component {
       console.log("DATE LIST", dates[date]);
     }
     this.setState({ information: data.near_earth_objects, loading: false });
+
 
   }
 
@@ -121,6 +122,7 @@ export default class FetchSpaceInfo extends React.Component {
           Absolute Magnitude :{" "}
           {this.state.information["2015-09-07"][0].absolute_magnitude_h}
         </div>
+
       </div>
     );
   }
