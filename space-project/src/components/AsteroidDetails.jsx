@@ -2,6 +2,7 @@ import React from "react";
 import LocationDistance from "./LocationDistance";
 import NameDescription from "./NameDescription";
 import FetchSpaceInfo from "./FetchSpaceInfo";
+import MoreInfo from "./MoreInfo";
 
 
 function AsteroidDetails(){
@@ -9,6 +10,8 @@ function AsteroidDetails(){
         <div>
 
             <FetchSpaceInfo />
+            <MoreInfo />
+
             {/* <LocationDistance
                 astType="Asteroid/Earth"
                 distMiles="Distance mi" />
