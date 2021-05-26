@@ -6,7 +6,6 @@ import AsteroidDetails from './components/AsteroidDetails';
 import AsteroidCard from './components/AsteroidCard';
 import Image from './components/Image';
 
-
 function App() {
   return (
     <div className="App">
