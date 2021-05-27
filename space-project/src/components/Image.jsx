@@ -4,7 +4,7 @@ import asteroid from './images/asteroid.jpg';
 function Image(){
     return(
         <div className="image">
-            <img src={asteroid}/>
+            <img src={asteroid} alt="asteroid" />
         </div>
     );
 }

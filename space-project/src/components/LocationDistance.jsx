@@ -4,7 +4,7 @@ function LocationDistance(props) {
   return (
     <div className="row asteroid-details">
       <div className="col-md-auto sm-circle-img">
-        <img alt="LocationImage"></img>
+        <img alt="Here"></img>
       </div>
       <div className="col-md-auto">
         <p className="astType">{props.astType}</p>

@@ -135,6 +135,9 @@ html {
 }
 
 .image {
+    bottom: 80px;
+    left: 600px;
+    
 
     background-color:#C4C4C4;
     width: 550px;
@@ -150,6 +153,5 @@ html {
     width: 530px;
     height: 530px;
     border-radius: 100%;
-    margin-top: 10px;    
+    margin-top: 10px;
 }
-
