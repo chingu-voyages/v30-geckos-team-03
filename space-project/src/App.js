@@ -5,10 +5,6 @@ import DateSearch from "./components/DateSearch";
 
 
 export const App = () => {
-
- 
-  
-
   return (
     <>
       <div className="App">
