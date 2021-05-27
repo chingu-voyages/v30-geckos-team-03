@@ -42,6 +42,14 @@ export class FetchSpaceInfo extends React.Component {
         <div>Minimum Diameter in Meters : {this.state.information["2015-09-07"][0].estimated_diameter.meters.estimated_diameter_min}</div>
         <div>Maximum Diameter in Meters : {this.state.information["2015-09-07"][0].estimated_diameter.meters.estimated_diameter_max}</div>
         <div>Absolute Magnitude : {this.state.information["2015-09-07"][0].absolute_magnitude_h}</div>
+<<<<<<< HEAD
+=======
+
+
+
+
+        
+>>>>>>> parent of ca12087 (Merge pull request #16 from chingu-voyages/DevelopmentBranch)
       </div>
     );
   }
