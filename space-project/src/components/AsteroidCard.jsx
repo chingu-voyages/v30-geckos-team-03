@@ -5,7 +5,7 @@ function AsteroidCard(props){
         <div>
             <div className="ast-card">
                 <h5>{props.name}</h5>
-                <img></img>
+                <img alt="CardImage"></img>
             </div>
         </div>
     );

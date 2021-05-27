@@ -1,29 +1,42 @@
-import React, {useState} from "react";
+import React from "react";
 
 //const dotenv = require('dotenv');
 const nasa_key = process.env.REACT_APP_NASA_API_KEY;
 
-export default class FetchSpaceInfo extends React.Component {
-  state = {
-    loading: true,
-    info: null,
-  };
+export const fetchAstriod = async () => {
+  const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=${nasa_key}`;
+  const response = await fetch(url);
+  const data = await response.json();
 
-  async componentDidMount() {
-    const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=${nasa_key}`;
-    const response = await fetch(url);
-    const data = await response.json();
-
-    console.log("ALL RESPONSE DATA", data);
-    const dates = data.near_earth_objects;
-    //console.log("DATES", dates);
-    for (const date in dates) {
-      console.log("DATE LIST", dates[date]);
-    }
-    this.setState({ information: data.near_earth_objects, loading: false });
-
-
+  console.log("ALL RESPONSE DATA", data);
+  const dates = data.near_earth_objects;
+  //console.log("DATES", dates);
+  for (const date in dates) {
+    console.log("DATE LIST", dates[date]);
   }
+  this.setState({ information: data.near_earth_objects, loading: false });
+  return data;
+}
+
+/*
+export class FetchSpaceInfo extends React.Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true,
+      info: null,
+    };
+  }
+  
+
+  componentDidMount = async () => {
+    this.fetchAstriod();
+  }
+
+  
+
+
 
   render() {
     if (this.state.loading) {
@@ -122,8 +135,10 @@ export default class FetchSpaceInfo extends React.Component {
           Absolute Magnitude :{" "}
           {this.state.information["2015-09-07"][0].absolute_magnitude_h}
         </div>
-
       </div>
     );
   }
 }
+
+*/
+
