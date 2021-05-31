@@ -15,13 +15,13 @@ function App() {
         <div className="container-border">
           <Navbar />
           <DateSearch />
-          <AsteroidDetails />
+          {/* <AsteroidDetails/> */}
           <FetchSpaceInfo />
 
-          <div className="row">
+          {/* <div className="row">
             <div className="col-md-auto"><AsteroidCard name="Asteroid 1"/></div>
             <div className="col-md-auto"><AsteroidCard name="Asteroid 2"/></div>
-          </div>
+          </div> */}
           
           <Image />
         </div>
