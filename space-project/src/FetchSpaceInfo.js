@@ -13,7 +13,7 @@ export default class FetchSpaceInfo extends React.Component {
   };
 
   async componentDidMount() {
-    const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=${nasa_key}`;
+    const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-04&end_date=2015-09-04&api_key=${nasa_key}`;
     const response = await fetch(url);
     const data = await response.json();
     console.log("ALL RESPONSE DATA",data);
@@ -83,8 +83,12 @@ export default class FetchSpaceInfo extends React.Component {
         />
 
       <div className="row">
-            <div className="col-md-auto"><AsteroidCard name={this.state.astro_list_compiled[1].name}/></div>
-            <div className="col-md-auto"><AsteroidCard name={this.state.astro_list_compiled[2].name}/></div>
+            <div className="col-md-auto"><AsteroidCard name={this.state.astro_list_compiled[1].name} 
+            distance={this.state.astro_list_compiled[1].close_approach_data[0].miss_distance.miles + " miles"}
+            orbiting={this.state.astro_list_compiled[1].close_approach_data[0].orbiting_body}/></div>
+            <div className="col-md-auto"><AsteroidCard name={this.state.astro_list_compiled[2].name} 
+            distance={this.state.astro_list_compiled[2].close_approach_data[0].miss_distance.miles + " miles"}
+            orbiting={this.state.astro_list_compiled[2].close_approach_data[0].orbiting_body}/></div>
           </div>
 
       </div>

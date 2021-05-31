@@ -5,6 +5,8 @@ function AsteroidCard(props){
         <div>
             <div className="ast-card">
                 <h5>{props.name}</h5>
+                <p>Orbiting: {props.orbiting}</p>
+                <p>Close Approach Distance: {props.distance}</p>
                 <img></img>
             </div>
         </div>
