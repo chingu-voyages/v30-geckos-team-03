@@ -54,9 +54,6 @@ export default class FetchSpaceInfo extends React.Component {
     console.log('astro object list',astro_object_list)
     let hazard=JSON.stringify(astro_list_compiled[0].is_potentially_hazardous_asteroid)
 
-    function getName(){
-      alert("Hello user");
-    }
 
     this.setState({ information: data.near_earth_objects, data:data, astros:astros, astro_list_compiled:astro_list_compiled, hazard:hazard, loading: false });
     
@@ -91,6 +88,11 @@ export default class FetchSpaceInfo extends React.Component {
             orbiting={this.state.astro_list_compiled[2].close_approach_data[0].orbiting_body}/></div>
           </div>
 
+
+
+
+        
+ 
       </div>
     );
   }
