@@ -22,6 +22,7 @@ function App() {
           </div>
           
           <Image />
+          <Photos />
         </div>
       </div>
     </div>
