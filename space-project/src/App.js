@@ -1,14 +1,14 @@
-import "./App.css";
-import React, { useState } from "react";
-import Navbar from "./components/Navbar";
-import DateSearch from "./components/DateSearch";
-import SearchBar from "./components/Searchbar";
-import LocationDistance from "./components/LocationDistance";
-import NameDescription from "./components/NameDescription";
-import AsteroidDetails from "./components/AsteroidDetails.jsx";
-import AsteroidCard from "./components/AsteroidCard.jsx";
-import Image from "./components/Image.jsx";
-import { fetchAsteroid } from "./FetchData";
+
+import './App.css';
+import React, { Component } from "react";
+import FetchSpaceInfo from "./FetchSpaceInfo";
+import Navbar from './components/Navbar';
+import DateSearch from './components/DateSearch';
+import AsteroidDetails from './components/AsteroidDetails';
+import AsteroidCard from './components/AsteroidCard';
+import Image from './components/Image';
+import MoreInfo from './components/MoreInfo';
+
 
 export const App = () => {
   const [start, setStart] = useState("");
@@ -29,36 +29,16 @@ export const App = () => {
       <div className="container-fluid">
         <div className="container-border">
           <Navbar />
-          <div className="row">
-            <div className="col-sm">
-              <div className="row">
-                <div className="col-sm">
-                  <SearchBar start={start} end={end} search={searchAsteroid()} />
-                  <LocationDistance
-                    asteroid={asteroid}
-                  />
-                  <NameDescription
-                    asteroid={asteroid}
-                  />
-                  <div className="row">
-                    <div className="col-md-6">
-                      <AsteroidCard name="Asteroid 1" />
-                    </div>
-                    <div className="col-md-6">
-                      <AsteroidCard name="Asteroid 2" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm">
-              <div className="row">
-                <div className="col-sm">
-                  <Image />
-                </div>
-              </div>
-            </div>
-          </div>
+          <DateSearch />
+          {/* <AsteroidDetails/> */}
+          <FetchSpaceInfo />
+
+          {/* <div className="row">
+            <div className="col-md-auto"><AsteroidCard name="Asteroid 1"/></div>
+            <div className="col-md-auto"><AsteroidCard name="Asteroid 2"/></div>
+          </div> */}
+          
+          <Image />
         </div>
       </div>
     </div>
