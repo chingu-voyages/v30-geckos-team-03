@@ -1,3 +1,4 @@
+
 import './App.css';
 import React, { Component } from "react";
 import FetchSpaceInfo from "./FetchSpaceInfo";
@@ -9,7 +10,20 @@ import Image from './components/Image';
 import MoreInfo from './components/MoreInfo';
 
 
-function App() {
+export const App = () => {
+  const [start, setStart] = useState("");
+  const [end, setEnd] = useState("");
+  const [asteroid, setAsteroid] = useState({});
+
+  const searchAsteroid = async (e) => {
+    
+      const dataAsteroid = await fetchAsteroid(start, end);
+
+      setAsteroid(dataAsteroid);
+      setStart("");
+      setEnd("");
+  };
+
   return (
     <div className="App">
       <div className="container-fluid">
@@ -29,7 +43,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
-
