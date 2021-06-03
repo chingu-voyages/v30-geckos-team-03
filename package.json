@@ -1,0 +1,19 @@
+{
+  "name": "v30-geckos-team-03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chingu-voyages/v30-geckos-team-03.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chingu-voyages/v30-geckos-team-03/issues"
+  },
+  "homepage": "https://github.com/chingu-voyages/v30-geckos-team-03#readme"
+}
