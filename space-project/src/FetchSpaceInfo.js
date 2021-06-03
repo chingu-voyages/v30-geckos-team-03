@@ -75,6 +75,7 @@ export default class FetchSpaceInfo extends React.Component {
         <AsteroidDetails 
         name={this.state.astro_list_compiled[0].name} 
         distance= {this.state.astro_list_compiled[0].close_approach_data[0].miss_distance.miles + " miles"}
+        distance_km={this.state.astro_list_compiled[0].close_approach_data[0].miss_distance.kilometers + " km"}
         description={this.state.astros[0]}
         hazard={this.state.hazard}
         />
