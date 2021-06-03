@@ -13,13 +13,6 @@
 /build
 
 # misc
-<<<<<<< HEAD
-*.env
-.env
-||||||| f09a2f6
-.env
-=======
->>>>>>> c4a607341d311753bafbbfeb8abf13b97c3be5f1
 .DS_Store
 .env
 .env.local

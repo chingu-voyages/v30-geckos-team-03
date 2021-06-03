@@ -1,6 +1,7 @@
 
 import './App.css';
 import React, { Component } from "react";
+import {useState} from "react";
 import FetchSpaceInfo from "./FetchSpaceInfo";
 import Navbar from './components/Navbar';
 import DateSearch from './components/DateSearch';
@@ -17,7 +18,7 @@ export const App = () => {
 
   const searchAsteroid = async (e) => {
     
-      const dataAsteroid = await fetchAsteroid(start, end);
+      const dataAsteroid = await searchAsteroid(start, end);
 
       setAsteroid(dataAsteroid);
       setStart("");
