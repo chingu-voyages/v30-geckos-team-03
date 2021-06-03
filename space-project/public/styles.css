@@ -120,6 +120,10 @@ html {
     line-height: 10px;
 }
 
+#more-info {
+    display: none;
+}
+
 /* Asteroid Cards */
 
 .ast-card {

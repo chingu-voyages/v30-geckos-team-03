@@ -6,6 +6,7 @@ import DateSearch from './components/DateSearch';
 import AsteroidDetails from './components/AsteroidDetails';
 import AsteroidCard from './components/AsteroidCard';
 import Image from './components/Image';
+import MoreInfo from './components/MoreInfo';
 
 
 function App() {
