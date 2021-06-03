@@ -1,7 +1,7 @@
 import React from "react";
 import MoreInfo from "./MoreInfo";
 
-function NameDescription(props) {
+const NameDescription = (props) => {
     return (
         <div className="name-description">
             <h1>{props.name}</h1>

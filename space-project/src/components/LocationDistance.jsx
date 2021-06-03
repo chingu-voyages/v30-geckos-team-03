@@ -1,6 +1,6 @@
 import React from "react";
 
-function LocationDistance(props) {
+const LocationDistance = (props) => {
   return (
     <div className="row asteroid-details">
       <div className="col-md-auto sm-circle-img">

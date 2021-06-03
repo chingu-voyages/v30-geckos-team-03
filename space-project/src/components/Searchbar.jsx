@@ -1,24 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
+import AsteroidDetails from "./AsteroidDetails";
+import fetchAsteroid from "../FetchSpaceInfo.js";
 
 const Searchbar = (props) => {
+  const [startDate, setStartDate] = useState("");
+  const endDate = startDate;
+  const [asteroid, setAsteroid] = useState({});
+  
+
+  const searchAsteroid = async (e) => {
+    if (e.key === "Enter") {
+      const dataAsteroid = fetchAsteroid(startDate, endDate);
+
+      setAsteroid(dataAsteroid);
+      setStartDate("");
+    } else {
+      const dataAsteroid = fetchAsteroid(startDate, endDate);
+
+      setAsteroid(dataAsteroid);
+      setStartDate("");
+    }
+  };
+
   return (
     <>
-      <div className="row">
-        <p>
-          Search for Asteroids based on their closest approach date to Earth:{" "}
-        </p>
-      </div>
       <div className="row">
         <div className="col-md-4">
           <input
             className="searchbar form-control"
-            type="text"
-            placeholder={props.placeholder}
+            type="date"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+            onKeyPress={searchAsteroid}
+            placeholder="Search..."
           />
         </div>
         <div className="col-md-2">
-          <button type="button" class="btn btn-light search-button">
-            <i class="fas fa-search"></i>
+          <button
+            type="button"
+            className="btn btn-light search-button"
+            onClick={searchAsteroid}
+          >
+            <i className="fas fa-search"></i>
           </button>
         </div>
       </div>

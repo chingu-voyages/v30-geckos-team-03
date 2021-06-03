@@ -1,8 +1,8 @@
 import React from "react";
 
-function MoreInfo() {
+const MoreInfo = () => {
 
-  function showMoreInfo() {
+  const showMoreInfo = () => {
     document.getElementById("more-info").style.display = "block";
   }
 
