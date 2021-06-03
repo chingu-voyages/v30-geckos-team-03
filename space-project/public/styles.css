@@ -24,8 +24,8 @@ html {
 
 .container-border {
     position: absolute;
-    width: 70vw;
-    height: 90vh;
+    width: auto;
+    height: auto;
 
     top: 5vh;
     left: 15vw;
@@ -120,6 +120,10 @@ html {
     line-height: 10px;
 }
 
+#more-info {
+    display: none;
+}
+
 /* Asteroid Cards */
 
 .ast-card {
@@ -135,9 +139,9 @@ html {
 }
 
 .image {
-    position: absolute;
     bottom: 80px;
     left: 600px;
+    
 
     background-color:#C4C4C4;
     width: 550px;
@@ -153,6 +157,5 @@ html {
     width: 530px;
     height: 530px;
     border-radius: 100%;
-    margin-top: 10px;    
+    margin-top: 10px;
 }
-
