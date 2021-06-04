@@ -23,7 +23,7 @@ function Signup() {
 
     return(
         <div>
-            <div className="row container-border">
+            <div className="row">
                 <div className="col-md-8 signup-content">
                     <h1>Sign Up</h1>
                     <p className="signup-p">Do you want asteroids to head straight for your inbox?</p> 

@@ -159,3 +159,55 @@ html {
     border-radius: 100%;
     margin-top: 10px;
 }
+
+/* Signup Page */
+
+.signup-input {
+background: rgba(229, 229, 229, 0.3);
+border-radius: 20px;
+width: 16rem;
+}
+
+.icon {
+font-size: 200px;
+color: #FFFFFF;
+}
+
+.signup-content {
+color: white;
+}
+
+.signup-content button {
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 10px;
+position: relative;
+text-align: center;
+
+background: #00D189;
+border: #00D189;
+color: white;
+border-radius: 15px;
+width: 76px;
+height: 30x;
+line-height: 10px;
+}
+
+.signup-p {
+line-height: 6px;;
+}
+
+.name-email{
+line-height: 6px;
+padding-top: 20px;
+}
+
+.name-email label {
+padding-left: 14px;
+}
+
+.terms {
+padding-top: 20px;
+font-size: 12px;
+}
