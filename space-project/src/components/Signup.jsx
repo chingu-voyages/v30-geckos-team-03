@@ -19,11 +19,18 @@ function Signup() {
     function handleSubmit(event) {
         event.preventDefault();
         setSubmitted(true);
+
+        if (values.email){
+            fetch(`/api/memberAdd?email=${values.email}`)
+            .then(res => res.json())
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+        }
     };
 
     return(
         <div>
-            <div className="row">
+            <div className="row container-fluid">
                 <div className="col-md-8 signup-content">
                     <h1>Sign Up</h1>
                     <p className="signup-p">Do you want asteroids to head straight for your inbox?</p> 
