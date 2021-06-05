@@ -2,6 +2,7 @@ import './App.css';
 import React from "react";
 import Navbar from './components/Navbar';
 import Searchbar from './components/Searchbar';
+import fecthAsteroid from './FetchSpaceInfo'
 
 
 export const App = () => {
@@ -12,6 +13,7 @@ export const App = () => {
         <div className="container-border">
           <Navbar />
           <Searchbar />
+          <fecthAsteroid />
           {/* <AsteroidDetails/> */}
 
           {/* <div className="row">

@@ -1,12 +1,49 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import AsteroidDetails from "./components/AsteroidDetails";
 import AsteroidCard from "./components/AsteroidCard";
 import Image from "./components/Image";
-import DateSearch from "./components/DateSearch";
-import Searchbar from "./components/Searchbar";
+import axios from "axios";
 
 //const dotenv = require('dotenv');
+
+const URL = "https://api.nasa.gov/neo/rest/v1/feed?";
 const nasa_key = process.env.REACT_APP_NASA_API_KEY;
+
+export const fetchAsteroid = async (startDate, endDate) => {
+  const { data } = await axios
+    .get(URL, {
+      params: {
+        start_date: startDate,
+        end_date: endDate,
+        api_key: nasa_key,
+      },
+    })
+    .catch((error) => {
+      console.log(error);
+      console.clear();
+    });
+
+  //console.log("ALL RESPONSE DATA", data);
+  const dates = data.near_earth_objects;
+  console.log("NEAR EARTH OBJECTS", dates);
+  const date_keys = Object.keys(dates);
+  //console.log("DATE KEYS", date_keys);
+  const date_vals = Object.values(dates);
+  //console.log("DATE VALUES", date_vals);
+  let astro_list_compiled = []; //this list will provide all asteroid objects for the dates in question
+
+
+  for (const dv of date_vals) {
+    for (const dw of dv) {
+      astro_list_compiled.push(dw);
+    }
+  }
+  console.log(astro_list_compiled)
+
+  //console.log(data);
+  return astro_list_compiled;
+};
+/*
 
 const fecthAsteroid = async (startDate, endDate) => {
 
@@ -30,9 +67,11 @@ const fecthAsteroid = async (startDate, endDate) => {
       astro_list_compiled.push(dw);
     }
   }
+  
 
   //console.log('COMPILED',astro_list_compiled);
-/*
+
+
   let keys = Object.keys(dates);
   console.log("keys", keys);
   let values = Object.values(dates);
@@ -113,12 +152,12 @@ const fecthAsteroid = async (startDate, endDate) => {
     astro_list_compiled[0].is_potentially_hazardous_asteroid
   );
 
+
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
       <div className="row">
         <div className="col-md-auto">
           <div className="row">
-            <DateSearch />
           </div>
           <div className="row">
             <AsteroidDetails
@@ -166,7 +205,9 @@ const fecthAsteroid = async (startDate, endDate) => {
       </div>
     </div>
   );
-  */
-}
-export default fecthAsteroid;
 
+  
+}
+
+export default fecthAsteroid;
+  */

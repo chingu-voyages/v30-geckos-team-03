@@ -8,7 +8,7 @@ const LocationDistance = (props) => {
       </div>
       <div className="col-md-auto">
         <p className="astType">{props.astType}</p>
-        <p className="distMiles">{props.distMiles}</p>
+        <p className="distMiles">{props.asteroid}</p>
       </div>
       <div className="col-md-auto">
         <button type="button" className="btn btn-light km-button">

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import AsteroidDetails from "./AsteroidDetails";
-import fetchAsteroid from "../FetchSpaceInfo.js";
+import { fetchAsteroid } from "../FetchSpaceInfo.js";
 
-const Searchbar = (props) => {
+const Searchbar = () => {
   const [startDate, setStartDate] = useState("");
   const endDate = startDate;
   const [asteroid, setAsteroid] = useState({});
@@ -45,6 +45,7 @@ const Searchbar = (props) => {
           </button>
         </div>
       </div>
+      <AsteroidDetails asteroid={asteroid} />
     </>
   );
 };
