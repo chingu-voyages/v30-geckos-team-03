@@ -12,6 +12,10 @@ mongoose.connect("mongodb+srv://jackie-admin:asteroid123@cluster0.mma4u.mongodb.
 //require route
 app.use("/", require("./routes/emailRoute"));
 
+app.get("/", function(req, res) {
+    res.send("Express here!");
+})
+
 app.listen(3001, function() {
     console.log("express server is running on port 3001")
 })

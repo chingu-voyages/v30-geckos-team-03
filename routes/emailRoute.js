@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const Email = require("../models/emailModel");
 
-router.route("/").post((req, res) => {
-    const title = req.body.title;
-    const content = req.body.content;
+router.route("/Signup").post((req, res) => {
+    const fullName = req.body.fullName;
+    const email = req.body.email;
     const newEmail = new Email({
         fullName,
         email

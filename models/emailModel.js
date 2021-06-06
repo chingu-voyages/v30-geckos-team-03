@@ -1,11 +1,11 @@
-const { string } = require("assert-plus");
+// const { string } = require("assert-plus");
 const mongoose = require("mongoose");
 
-const emailSchema = {
+const userSchema = {
     fullName: String,
     email: String
 }
 
-const Email = mongoose.model("Email", emailSchema);
+const User = mongoose.model("User", userSchema);
 
-module.exports = Email;
+module.exports = User;
