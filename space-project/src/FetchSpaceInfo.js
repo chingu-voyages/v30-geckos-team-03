@@ -1,11 +1,16 @@
 import React, {useState} from "react";
 import AsteroidDetails from './components/AsteroidDetails'
 import AsteroidCard from './components/AsteroidCard'
+import DateSearch from "./components/DateSearch";
+import Searchbar from "./components/Searchbar";
 import MoreInfo from './components/MoreInfo';
 
 
 //const dotenv = require('dotenv');
 const nasa_key=process.env.REACT_APP_NASA_API_KEY;
+
+const startDate=new Date().toISOString().slice(0,10);
+const endDate=new Date().toISOString().slice(0,10);
 
 export default class FetchSpaceInfo extends React.Component {
   state = {
@@ -13,8 +18,9 @@ export default class FetchSpaceInfo extends React.Component {
     info: null
   };
 
-  async componentDidMount() {
-    const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-04&end_date=2015-09-04&api_key=${nasa_key}`;
+  
+  async componentDidMount() { 
+    const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=${nasa_key}`;
     const response = await fetch(url);
     const data = await response.json();
     console.log("ALL RESPONSE DATA",data);
@@ -29,12 +35,13 @@ export default class FetchSpaceInfo extends React.Component {
 
     for (const dv of date_vals){for (const dw of dv){astro_list_compiled.push(dw)}}
 
-    //console.log('COMPILED',astro_list_compiled);
+    console.log('COMPILED',astro_list_compiled);
 
-    let keys=Object.keys(dates);
-    console.log('keys',keys)
-    let values=Object.values(dates);
-    let astros=values.map(function(d){let myiterator=d.values(); for(let myitem of myiterator) {return(<ul>
+    astro_list_compiled.sort((a,b)=>{ return a.close_approach_data[0].miss_distance.kilometers-b.close_approach_data[0].miss_distance.kilometers;})
+
+    console.log("SORTED COMPILED", astro_list_compiled);
+
+    let astros=astro_list_compiled.map(function compile(myitem){return(<ul>
       <li>Name: {myitem.name}</li>
       <li>Orbiting: {myitem.close_approach_data[0].orbiting_body}</li>
       <li>JPL ID: {myitem.id}</li>
@@ -51,11 +58,8 @@ export default class FetchSpaceInfo extends React.Component {
       <li>Maximum Diameter in Meters: {myitem.estimated_diameter.meters.estimated_diameter_max}</li>
       </span>
       
-    </ul>)}; 
-    return d.length});
-    console.log('astros list',astros);
-    let astro_object_list=date_vals.map(function(g){let newiterator=g.values(); for(let newitem of newiterator) {return newitem};});
-    console.log('astro object list',astro_object_list)
+    </ul>)});
+    console.log('astros formatted information',astros);
     let hazard=JSON.stringify(astro_list_compiled[0].is_potentially_hazardous_asteroid)
 
 
@@ -78,8 +82,8 @@ export default class FetchSpaceInfo extends React.Component {
       >
         <AsteroidDetails 
         name={this.state.astro_list_compiled[0].name} 
-        distance= {this.state.astro_list_compiled[0].close_approach_data[0].miss_distance.miles + " miles"}
-        distance_km={this.state.astro_list_compiled[0].close_approach_data[0].miss_distance.kilometers + " km"}
+        distance= {parseFloat(this.state.astro_list_compiled[0].close_approach_data[0].miss_distance.miles).toFixed(2) + " miles"}
+        distance_km={parseFloat(this.state.astro_list_compiled[0].close_approach_data[0].miss_distance.kilometers).toFixed(2) + " km"}
         description={this.state.astros[0]}
         hazard={this.state.hazard}
         />
