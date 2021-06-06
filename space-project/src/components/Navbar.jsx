@@ -9,7 +9,7 @@ function Navbar() {
         <a className="navbar-brand" href="/">
           <i className="fas fa-meteor"></i>Asteroids
         </a>
-        <button
+        {/* <button
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"
@@ -18,20 +18,11 @@ function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+        <span className="navbar-toggler-icon"></span>
+        </button> */}
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav nav-features">
-            <a
-              id="nav-links"
-              className="nav-item nav-link active test"
-              href="/Signup"
-            >
-              Sign Up <span className="sr-only">(current)</span>
-            </a>
-            {/* <Link to="/Signup">Sign up</Link> */}
-
-            
+            <h5 id="nav-links" className="nav-item nav-link active test"><Link to="/Signup">Sign Up</Link></h5>
           </div>
         </div>
       </nav>

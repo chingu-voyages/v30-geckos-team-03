@@ -50,7 +50,9 @@ function Signup() {
                             <label>Email</label>
                             <input type="email" name="email" value={input.email} onChange={handleChange} className="form-control signup-input" required></input>
                         </div>
+                        
                         <p className="terms">By clicking submit, you agree to the terms of service and our privacy policy. </p>
+
                         <button onClick={handleClick} type="submit" className="btn btn-light">Submit</button>
                     </form>
                     
