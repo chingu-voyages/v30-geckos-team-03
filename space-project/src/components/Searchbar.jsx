@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AsteroidDetails from "./AsteroidDetails";
 import { fetchAsteroid } from "../FetchSpaceInfo.js";
 
+
 const Searchbar = () => {
   const [startDate, setStartDate] = useState("");
   const endDate = startDate;

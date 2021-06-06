@@ -1,6 +1,7 @@
 import React from "react";
 import MoreInfo from "./MoreInfo";
 
+
 const NameDescription = (props) => {
     return (
         <div className="name-description">

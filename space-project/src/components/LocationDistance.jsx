@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const LocationDistance = (props) => {
   return (
     <div className="row asteroid-details">
@@ -8,7 +9,8 @@ const LocationDistance = (props) => {
       </div>
       <div className="col-md-auto">
         <p className="astType">{props.astType}</p>
-        <p className="distMiles">{props.asteroid}</p>
+        <p className="distMiles">{props.distMiles}</p>
+
       </div>
       <div className="col-md-auto">
         <button type="button" className="btn btn-light km-button">
