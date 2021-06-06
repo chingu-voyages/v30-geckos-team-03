@@ -1,31 +1,36 @@
 import React, {useState} from "react";
+import axios from "axios";
 
 function Signup() {
 
-    const [values, setValues] = useState({
-        name:"",
+    const [input, setInput] = useState({
+        fullName:"",
         email:""
     });
 
     const [submitted, setSubmitted] = useState(false);
 
     function handleChange(event) {
-        setValues({
-            ...values,
-            [event.target.name]: event.target.value
-        });
+        const {name, value} = event.target;
+
+        setInput(prevInput => {
+            return {
+                ...prevInput,
+                [name]: value 
+            }  
+        })
     };
 
-    function handleSubmit(event) {
+    function handleClick(event) {
         event.preventDefault();
         setSubmitted(true);
 
-        if (values.email){
-            fetch(`/api/memberAdd?email=${values.email}`)
-            .then(res => res.json())
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+        const newEmail = {
+            fullName: input.name, 
+            email: input.email
         }
+
+        axios.post("http://localhost:3001/Signup", newEmail)
     };
 
     return(
@@ -35,22 +40,23 @@ function Signup() {
                     <h1>Sign Up</h1>
                     <p className="signup-p">Do you want asteroids to head straight for your inbox?</p> 
                     <p className="signup-p">Sign up below for our monthly newsletter!</p>
+
                     <form>
                         <div className="name-email">
                             <label>Name</label>
-                            <input type="text" name="name" value={values.name} onChange={handleChange} className="form-control signup-input"></input>
+                            <input type="text" name="fullName" value={input.fullName} onChange={handleChange} className="form-control signup-input" required></input>
                         </div>
                         <div className="name-email">
                             <label>Email</label>
-                            <input type="email" name="email" value={values.email} onChange={handleChange} className="form-control signup-input"></input>
+                            <input type="email" name="email" value={input.email} onChange={handleChange} className="form-control signup-input" required></input>
                         </div>
                         <p className="terms">By clicking submit, you agree to the terms of service and our privacy policy. </p>
-                        <button className="btn btn-light" onClick={handleSubmit}>Submit</button>
+                        <button onClick={handleClick} type="submit" className="btn btn-light">Submit</button>
                     </form>
                     
                 </div>
                 <div className="col-md-4 signup-content">
-                    <h1>{!submitted ? <h1></h1> : <h1>Thank you, {values.name}!</h1>}</h1>
+                    <h1>{!submitted ? <h1></h1> : <h1>Thank you, {input.fullName}!</h1>}</h1>
                     <div className="icon hvr-buzz"><i class="fas fa-meteor"></i></div>
                     <div>
                         {!submitted ? <p></p> : <p>You've successfully signed up for our asteroid newsletter.</p>}
