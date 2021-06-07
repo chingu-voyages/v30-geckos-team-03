@@ -1,13 +1,7 @@
 
-import React, {useState} from "react";
+import React from "react";
 import Navbar from './components/Navbar';
-import DateSearch from './components/DateSearch';
-import AsteroidDetails from './components/AsteroidDetails';
-import AsteroidCard from './components/AsteroidCard';
-import Searchbar from './components/Searchbar';
-import fecthAsteroid from './FetchSpaceInfo';
 import Image from './components/Image';
-import MoreInfo from './components/MoreInfo';
 import FetchSpaceInfo from './components/FetchSpaceInfo';
 import Signup from './components/Signup';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
@@ -23,8 +17,7 @@ export const App = () => {
           <Switch>
             <Route exact path="/">
               <Navbar />
-              <Searchbar />
-			  <fecthAsteroid />
+              <FetchSpaceInfo />
               {/* <AsteroidDetails/> */}
               {/* <FetchSpaceInfo /> */}
 

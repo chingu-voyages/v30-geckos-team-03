@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import AsteroidDetails from "./AsteroidDetails";
-import { fetchAsteroid } from "../FetchSpaceInfo.js";
 
 
 const Searchbar = () => {
@@ -8,20 +6,6 @@ const Searchbar = () => {
   const endDate = startDate;
   const [asteroid, setAsteroid] = useState({});
   
-
-  const searchAsteroid = async (e) => {
-    if (e.key === "Enter") {
-      const dataAsteroid = fetchAsteroid(startDate, endDate);
-
-      setAsteroid(dataAsteroid);
-      setStartDate("");
-    } else {
-      const dataAsteroid = fetchAsteroid(startDate, endDate);
-
-      setAsteroid(dataAsteroid);
-      setStartDate("");
-    }
-  };
 
   return (
     <>
@@ -32,7 +16,6 @@ const Searchbar = () => {
             type="date"
             value={startDate}
             onChange={(e) => setStartDate(e.target.value)}
-            onKeyPress={searchAsteroid}
             placeholder="Search..."
           />
         </div>
@@ -40,13 +23,12 @@ const Searchbar = () => {
           <button
             type="button"
             className="btn btn-light search-button"
-            onClick={searchAsteroid}
+            onClick={(e) => setStartDate(e.target.value)}
           >
             <i className="fas fa-search"></i>
           </button>
         </div>
       </div>
-      <AsteroidDetails asteroid={asteroid} />
     </>
   );
 };
