@@ -12,8 +12,7 @@ export const App = () => {
   return (
     <Router>
       <div className="App">
-        <div className="container-fluid">
-          <div className="container-border">
+          <div className="container-border container-fluid">
           <Switch>
             <Route exact path="/">
               <Navbar />
@@ -34,7 +33,7 @@ export const App = () => {
             </Route>
 
           </Switch>
-          </div>
+          
         </div>
       </div>
     </Router>
