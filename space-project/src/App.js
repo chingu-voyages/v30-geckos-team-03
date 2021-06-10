@@ -20,7 +20,7 @@ function App() {
           <Navbar />
           <Searchbar date={date} setLookupDate={setLookupDate} onChange={onChange}/>
           <FetchSpaceInfo date={date}/>
-          <DailyImage />
+          
 
           
           <Image />
