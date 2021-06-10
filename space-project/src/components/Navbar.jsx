@@ -22,6 +22,7 @@ function Navbar(props) {
           <div className="navbar-nav nav-features">
             <h5 className="nav-item nav-link active test"><Link className="links" to={props.firstLink}>{props.firstLinkName}</Link></h5>
             <h5 className="nav-item nav-link"><Link className="links" to={props.secondLink}>{props.secondLinkName}</Link></h5>
+            <h5 className="nav-item nav-link"><Link className="links" to={props.thirdLink}>{props.thirdLinkName}</Link></h5>
           </div>
         </div>
       </nav>

@@ -26,6 +26,9 @@ function Comments() {
                     firstLinkName="Home"
                     secondLink="/Signup"
                     secondLinkName="Sign Up"
+                    thirdLink="/DailyImage"
+                    thirdLinkName="Daily Image"
+                  
                     />
             {comments.map(comment =>
             <div>

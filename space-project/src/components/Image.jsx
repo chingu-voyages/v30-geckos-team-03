@@ -1,5 +1,6 @@
 import React from "react";
 import asteroid from './images/asteroid.jpg';
+import DailyImage from '../DailyImage';
 
 function Image(){
     return(

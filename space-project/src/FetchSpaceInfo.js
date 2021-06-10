@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import AsteroidDetails from './AsteroidDetails'
-import AsteroidCard from './AsteroidCard'
-import MoreInfo from './MoreInfo';
+import AsteroidDetails from './components/AsteroidDetails';
+import AsteroidCard from './components/AsteroidCard';
+import MoreInfo from './components/MoreInfo';
 
 const nasa_key=process.env.REACT_APP_NASA_API_KEY;
 

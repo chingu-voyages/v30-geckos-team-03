@@ -48,7 +48,10 @@ function Signup() {
                     firstLinkName="Home"
                     secondLink="/Comments"
                     secondLinkName="Comments"
+                    thirdLink="/DailyImage"
+                    thirdLinkName="Daily Image"
                     />
+
                     <p className="signup-p">Do you want asteroids to head straight for your inbox?</p> 
                     <p className="signup-p">Sign up below for our monthly newsletter!</p>
 

@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Navbar from "./components/Navbar";
 
 const nasa_key=process.env.REACT_APP_NASA_API_KEY;
 
@@ -28,10 +29,23 @@ export default class DailyImage extends React.Component {
     }
 
     return (
+      
       <div style={{display:'flex',flexWrap:'wrap'}}
+        
       >
+                  <Navbar 
+                    brandhref="/DailyImage"
+                    brandName="Daily Image"
+                    firstLink="/"
+                    firstLinkName="Home"
+                    secondLink="/Signup"
+                    secondLinkName="Sign Up"
+                    thirdLink="/Comments"
+                    thirdLinkName="Comments"
+                  />
+      
         <div>{this.state.info2.title}: ©{this.state.info2.copyright} <br></br>
-        <img src={this.state.info2.url} style={{maxHeight: '100px', maxWidth: '200px'}}/> {this.state.info2.explanation}</div>
+        <img className="daily-image" src={this.state.info2.url} style={{maxHeight: '100px', maxWidth: '200px'}}/> <br></br> {this.state.info2.explanation}</div>
          
  
       </div>
