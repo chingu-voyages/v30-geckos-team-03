@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import Image from './components/Image';
 import MoreInfo from './components/MoreInfo';
 import DailyImage from './DailyImage';
-import Searchbar from './components/Searchbar';
+import Searchbar from './Searchbar';
 import Signup from './components/Signup';
 import Comments from './components/Comments';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";

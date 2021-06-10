@@ -11,7 +11,7 @@ const Searchbar = (props) => {
           <div className="col-xs-6">
             <input
             className="searchbar form-control"
-            type="text"
+            type="date"
             placeholder={props.placeholder}
             />
           </div>
