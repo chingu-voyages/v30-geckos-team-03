@@ -1,38 +1,27 @@
-
-import React from "react";
+import './App.css';
+import React, {useState} from "react";
+import FetchSpaceInfo from "./FetchSpaceInfo";
 import Navbar from './components/Navbar';
 import Image from './components/Image';
-import FetchSpaceInfo from './components/FetchSpaceInfo';
-import Signup from './components/Signup';
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import MoreInfo from './components/MoreInfo';
+import DailyImage from './DailyImage';
+import Searchbar from './Searchbar';
 
 
-export const App = () => {
-  
+function App() {
+
+  const [date, setDate] = useState(new Date().toISOString().slice(0,10));
+  const setLookupDate = (date)=>{setDate((CurrentDate)=>date)}
+  const onChange=(event)=>{setLookupDate(event.target.value)}
   return (
-    <Router>
-      <div className="App">
-          <div className="container-border container-fluid">
-          <Switch>
-            <Route exact path="/">
-              <Navbar />
-              <FetchSpaceInfo />
-              {/* <AsteroidDetails/> */}
-              {/* <FetchSpaceInfo /> */}
+    <div className="App">
+      <div className="container-fluid">
+        <div className="container-border">
+          <Navbar />
+          <Searchbar date={date} setLookupDate={setLookupDate} onChange={onChange}/>
+          <FetchSpaceInfo date={date}/>
+          <DailyImage />
 
-              {/* <div className="row">
-                <div className="col-md-auto"><AsteroidCard name="Asteroid 1"/></div>
-                <div className="col-md-auto"><AsteroidCard name="Asteroid 2"/></div>
-              </div> */}
-              
-              <Image />
-            </Route>
-
-            <Route exact path="/Signup">
-              <Signup />
-            </Route>
-
-          </Switch>
           
         </div>
       </div>
