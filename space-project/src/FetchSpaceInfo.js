@@ -1,17 +1,16 @@
-
 import React, {useState} from "react";
-import AsteroidDetails from './AsteroidDetails'
-import AsteroidCard from './AsteroidCard'
-// import MoreInfo from './components/MoreInfo';
+import AsteroidDetails from './components/AsteroidDetails'
+import AsteroidCard from './components/AsteroidCard'
+import MoreInfo from './components/MoreInfo';
 
 
 //const dotenv = require('dotenv');
-const nasa_key = process.env.REACT_APP_NASA_API_KEY;
+const nasa_key=process.env.REACT_APP_NASA_API_KEY;
 
 export default class FetchSpaceInfo extends React.Component {
   state = {
     loading: true,
-    info: null,
+    info: null
   };
 
   async componentDidMount() {
@@ -61,6 +60,8 @@ export default class FetchSpaceInfo extends React.Component {
 
 
     this.setState({ information: data.near_earth_objects, data:data, astros:astros, astro_list_compiled:astro_list_compiled, hazard:hazard, loading: false });
+    
+  
   }
 
   render() {
@@ -73,7 +74,6 @@ export default class FetchSpaceInfo extends React.Component {
     }
 
     return (
-
       <div style={{display:'flex',flexWrap:'wrap'}}
       >
         <AsteroidDetails 
@@ -92,8 +92,13 @@ export default class FetchSpaceInfo extends React.Component {
             distance={this.state.astro_list_compiled[2].close_approach_data[0].miss_distance.miles + " miles"}
             orbiting={this.state.astro_list_compiled[2].close_approach_data[0].orbiting_body}/></div>
           </div>
+
+
+
+
+        
+ 
       </div>
     );
   }
 }
-

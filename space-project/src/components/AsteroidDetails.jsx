@@ -5,7 +5,8 @@ import FetchSpaceInfo from "./FetchSpaceInfo";
 import MoreInfo from "./MoreInfo";
 
 
-const AsteroidDetails = (props) => {
+function AsteroidDetails(props){
+
     return(
         <div>
 
@@ -14,12 +15,11 @@ const AsteroidDetails = (props) => {
 
             <LocationDistance
                 astType="Asteroid/Earth"
-                distMiles="Distance" />
-            
+                distMiles={props.distance} />
             <NameDescription 
-                name="Name"
-                description="Description"
-                hazard="Hazard"
+                name={props.name}
+                description={props.description}
+                hazard={props.hazard}
             />
         </div>
         

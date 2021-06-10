@@ -5,9 +5,9 @@ import React from "react";
 import Navbar from './components/Navbar';
 import Searchbar from './components/Searchbar';
 import AsteroidDetails from './components/AsteroidDetails';
-import AsteroidCard from './components/AsteroidCard';
+// import AsteroidCard from './components/AsteroidCard';
 import Image from './components/Image';
-import MoreInfo from './components/MoreInfo';
+// import MoreInfo from './components/MoreInfo';
 import FetchSpaceInfo from './components/FetchSpaceInfo';
 import Signup from './components/Signup';
 import Comments from './components/Comments';
@@ -34,13 +34,13 @@ export const App = () => {
                   secondLinkName="Comments"
                 />
                 <Searchbar />
-                <AsteroidDetails/>
-                {/* <FetchSpaceInfo /> */}
+                {/* <AsteroidDetails/> */}
+                <FetchSpaceInfo />
 
-                <div className="row">
+                {/* <div className="row">
                   <div className="col-sm-auto"><AsteroidCard name="Asteroid 1"/></div>
                   <div className="col-sm-auto"><AsteroidCard name="Asteroid 2"/></div>
-                </div>
+                </div> */}
 
               </div>
               <div className="col-md-5">
