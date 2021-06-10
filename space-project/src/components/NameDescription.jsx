@@ -8,14 +8,6 @@ function NameDescription(props) {
             <p className="description">
                 <ul>
                     <li>{props.description}</li>
-                    <li>{props.description}</li>
-                    <li>{props.description}</li>
-                    <li>{props.description}</li>
-                    <li>{props.description}</li>
-                    <li>{props.description}</li>
-                    <li>{props.description}</li>
-                    <li>{props.description}</li>
-                    <li>{props.description}</li>
                     <li>Potentially Hazardous?: {props.hazard}</li>
                 </ul>
             </p>

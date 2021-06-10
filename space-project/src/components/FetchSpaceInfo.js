@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import AsteroidDetails from './components/AsteroidDetails'
-import AsteroidCard from './components/AsteroidCard'
-import MoreInfo from './components/MoreInfo';
+import AsteroidDetails from './AsteroidDetails'
+import AsteroidCard from './AsteroidCard'
+import MoreInfo from './MoreInfo';
 
 
 //const dotenv = require('dotenv');
