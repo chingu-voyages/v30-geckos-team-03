@@ -11,7 +11,8 @@ function AsteroidDetails(props){
 
             <LocationDistance
                 astType="Asteroid/Earth"
-                distMiles={props.distance} />
+                distMiles={props.distance} 
+                distKm={props.distance_km}/>
             <NameDescription 
                 name={props.name}
                 description={props.description}
