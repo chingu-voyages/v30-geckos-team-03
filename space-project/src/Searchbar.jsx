@@ -6,6 +6,7 @@ function Searchbar(props){
 
   return(
     <div>
+      <p>Search for Asteroids based on their closest approach date to Earth: </p>
       <input className="searchbar form-control" type="date" value={props.date} placeholder={props.placeholder} onChange={props.onChange} />
     </div>
   )

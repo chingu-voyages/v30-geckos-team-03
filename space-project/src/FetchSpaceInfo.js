@@ -72,7 +72,7 @@ export default class FetchSpaceInfo extends React.Component {
     const date_keys = Object.keys(dates)
   
     const date_vals=Object.values(dates)
-    let astro_list_compiled=[] //this list will provide all asteroid objects for the dates in question
+    let astro_list_compiled=[]
 
     for (const dv of date_vals){for (const dw of dv){astro_list_compiled.push(dw)}}
 
