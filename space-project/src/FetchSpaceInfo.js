@@ -1,25 +1,31 @@
 import React, {useState} from "react";
 import AsteroidDetails from './components/AsteroidDetails'
 import AsteroidCard from './components/AsteroidCard'
-import DateSearch from "./components/DateSearch";
-import Searchbar from "./components/Searchbar";
 import MoreInfo from './components/MoreInfo';
 
 
 //const dotenv = require('dotenv');
 const nasa_key=process.env.REACT_APP_NASA_API_KEY;
 
-const startDate=new Date().toISOString().slice(0,10);
-const endDate=new Date().toISOString().slice(0,10);
+/* const startDate=new Date().toISOString().slice(0,10);
+const endDate=new Date().toISOString().slice(0,10); */
+
+/* const date_trial=this.props.date;
+console.log('DATE FROM APP to FSI', date_trial); */
 
 export default class FetchSpaceInfo extends React.Component {
+
   state = {
     loading: true,
     info: null
   };
 
   
-  async componentDidMount() { 
+  async componentDidMount() {
+    const startDate=this.props.date;
+    console.log('START DATE variable',startDate);
+    const endDate=startDate;
+    console.log('DATE FROM FetchSpaceInfo', startDate);
     const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=${nasa_key}`;
     const response = await fetch(url);
     const data = await response.json();
@@ -62,7 +68,7 @@ export default class FetchSpaceInfo extends React.Component {
     let hazard=JSON.stringify(astro_list_compiled[0].is_potentially_hazardous_asteroid)
 
 
-    this.setState({ information: data.near_earth_objects, data:data, astros:astros, astro_list_compiled:astro_list_compiled, hazard:hazard, loading: false });
+    this.setState({ information: data.near_earth_objects, data:data, astros:astros, astro_list_compiled:astro_list_compiled, hazard:hazard, startDate:startDate, endDate:endDate,loading: false });
     
   
   }

@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component } from "react";
+import React, { Component, useState} from "react";
 import FetchSpaceInfo from "./FetchSpaceInfo";
 import Navbar from './components/Navbar';
 import DateSearch from './components/DateSearch';
@@ -8,17 +8,22 @@ import AsteroidCard from './components/AsteroidCard';
 import Image from './components/Image';
 import MoreInfo from './components/MoreInfo';
 import DailyImage from './DailyImage';
+import Searchbar from './Searchbar';
 
 
 function App() {
+
+  const [date, setDate] = useState("2021-05-12");
+  const setLookupDate = (date)=>{setDate((CurrentDate)=>date)}
   return (
     <div className="App">
       <div className="container-fluid">
         <div className="container-border">
           <Navbar />
-          <DateSearch />
+          <Searchbar date={date} setLookupDate={setLookupDate}/>
+          {/* <DateSearch /> */}
           {/* <AsteroidDetails/> */}
-          <FetchSpaceInfo />
+          <FetchSpaceInfo date={date}/>
           <DailyImage />
 
           {/* <div className="row">
