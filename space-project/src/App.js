@@ -7,6 +7,7 @@ import AsteroidDetails from './components/AsteroidDetails';
 import AsteroidCard from './components/AsteroidCard';
 import Image from './components/Image';
 import MoreInfo from './components/MoreInfo';
+import DailyImage from './DailyImage';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <DateSearch />
           {/* <AsteroidDetails/> */}
           <FetchSpaceInfo />
+          <DailyImage />
 
           {/* <div className="row">
             <div className="col-md-auto"><AsteroidCard name="Asteroid 1"/></div>

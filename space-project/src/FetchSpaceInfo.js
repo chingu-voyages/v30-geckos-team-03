@@ -31,7 +31,6 @@ export default class FetchSpaceInfo extends React.Component {
     const date_vals=Object.values(dates)
     console.log("DATE VALUES", date_vals)
     let astro_list_compiled=[] //this list will provide all asteroid objects for the dates in question
-    
 
     for (const dv of date_vals){for (const dw of dv){astro_list_compiled.push(dw)}}
 
@@ -78,8 +77,7 @@ export default class FetchSpaceInfo extends React.Component {
     }
 
     return (
-      <div style={{display:'flex',flexWrap:'wrap'}}
-      >
+      <div style={{display:'flex',flexWrap:'wrap'}}>
         <AsteroidDetails 
         name={this.state.astro_list_compiled[0].name} 
         distance= {parseFloat(this.state.astro_list_compiled[0].close_approach_data[0].miss_distance.miles).toFixed(2) + " miles"}
