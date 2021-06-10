@@ -15,12 +15,14 @@ function App() {
 
   const [date, setDate] = useState("2021-05-12");
   const setLookupDate = (date)=>{setDate((CurrentDate)=>date)}
+  const onChange=(event)=>{setLookupDate(event.target.value)}
+  console.log('Date FROM APP component',date)
   return (
     <div className="App">
       <div className="container-fluid">
         <div className="container-border">
           <Navbar />
-          <Searchbar date={date} setLookupDate={setLookupDate}/>
+          <Searchbar date={date} setLookupDate={setLookupDate} onChange={onChange}/>
           {/* <DateSearch /> */}
           {/* <AsteroidDetails/> */}
           <FetchSpaceInfo date={date}/>

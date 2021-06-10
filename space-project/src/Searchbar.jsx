@@ -4,10 +4,10 @@ import FetchSpaceInfo from "./FetchSpaceInfo.js";
 
 function Searchbar(props){
 
-  console.log("DATE?", props.date);
+  console.log("DATE from Searchbar component?", props.date);
   return(
     <div>
-      <input className="searchbar form-control" type="date" value={props.date} placeholder={props.placeholder} onChange={(event)=>{props.setLookupDate(event.target.value)}} />
+      <input className="searchbar form-control" type="date" value={props.date} placeholder={props.placeholder} onChange={props.onChange} />
     </div>
   )
 }
