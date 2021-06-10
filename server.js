@@ -10,7 +10,7 @@ app.use(express.json());
 mongoose.connect("mongodb+srv://jackie-admin:asteroid123@cluster0.mma4u.mongodb.net/asteroidDB")
 
 //require route
-app.use("/", require("./routes/emailRoute"));
+app.use("/", require("./routes/userRoute"));
 
 app.get("/", function(req, res) {
     res.send("Express here!");
