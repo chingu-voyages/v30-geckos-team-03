@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 
 const nasa_key=process.env.REACT_APP_NASA_API_KEY;
 
@@ -31,7 +31,7 @@ export default class DailyImage extends React.Component {
       <div style={{display:'flex',flexWrap:'wrap'}}
       >
         <div>{this.state.info2.title}: ©{this.state.info2.copyright} <br></br>
-        <img src={this.state.info2.url} style={{maxHeight: '100px', maxWidth: '200px'}}/> {this.state.info2.explanation}</div>
+        <img src={this.state.info2.url} alt="nasa daily" style={{maxHeight: '100px', maxWidth: '200px'}}/> {this.state.info2.explanation}</div>
          
  
       </div>
