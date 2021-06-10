@@ -21,20 +21,35 @@ export const App = () => {
       <div className="App">
           <div className="container-fluid">
           <Switch>
+
             <Route exact path="/">
-              <Navbar />
-              <Searchbar />
-              {/* <AsteroidDetails/> */}
-              {/* <FetchSpaceInfo /> */}
+            <div className="row">
+              <div className="col-md-7">
+                <Navbar 
+                  brandhref="/"
+                  brandName="Asteroids"
+                  firstLink="/Signup"
+                  firstLinkName="Sign Up"
+                  secondLink="/Comments"
+                  secondLinkName="Comments"
+                />
+                <Searchbar />
+                <AsteroidDetails/>
+                {/* <FetchSpaceInfo /> */}
 
-              <div className="row">
-                <div className="col-md-auto"><AsteroidCard name="Asteroid 1"/></div>
-                <div className="col-md-auto"><AsteroidCard name="Asteroid 2"/></div>
+                <div className="row">
+                  <div className="col-sm-auto"><AsteroidCard name="Asteroid 1"/></div>
+                  <div className="col-sm-auto"><AsteroidCard name="Asteroid 2"/></div>
+                </div>
+
               </div>
-              
-              <Image />
-            </Route>
+              <div className="col-md-5">
+                <Image />
+              </div>
+            </div>
 
+            </Route>
+     
             <Route exact path="/Signup">
               <Signup />
             </Route>

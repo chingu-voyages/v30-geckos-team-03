@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from "react";
+import Navbar from "./Navbar";
 
 function Comments() {
 
     const [comments, setComments] = useState([{
         fullName:"",
-        email: ""
-    }])
+        email: "",
+        comment: ""
+    }]) 
 
     useEffect(() => {
         fetch("/Comments").then(res => {
@@ -17,11 +19,17 @@ function Comments() {
 
     return(
         <div>
-            <h4>Comments</h4>
+            <Navbar 
+                    brandhref="/Comments"
+                    brandName="Comments"
+                    firstLink="/"
+                    firstLinkName="Home"
+                    secondLink="/Signup"
+                    secondLinkName="Sign Up"
+                    />
             {comments.map(comment =>
             <div>
-                <p>{comment.fullName}</p>
-                <p>{comment.email}</p>
+                <p>{comment.comment}</p>
             </div> 
             )}
         </div>
