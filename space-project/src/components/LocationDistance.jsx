@@ -1,37 +1,6 @@
 import React from "react";
 
 function LocationDistance(props) {
-<<<<<<< HEAD
-  return (
-    <div className="row asteroid-details">
-      <div className="col-md-auto sm-circle-img">
-        <img alt="Here"></img>
-      </div>
-      <div className="col-md-auto">
-        <p className="astType">{props.astType}</p>
-        <p className="distMiles">{props.distMiles}</p>
-      </div>
-      <div className="col-md-auto">
-        <button type="button" className="btn btn-light km-button">
-          /km
-        </button>
-      </div>
-    </div>
-  );
-||||||| d164460
-    return(
-        <div className="row asteroid-details">
-            <div className="col-md-auto sm-circle-img">
-                <img/>
-            </div>
-            <div className="col-md-auto">
-                <p className="astType">{props.astType}</p>
-                <p className="distMiles">{props.distMiles}</p>
-            </div>
-            <div className="col-md-auto"><button type="button" class="btn btn-light km-button">/km</button></div>
-        </div>   
-    );
-=======
 
     function changeDistance(){
         let miles=document.getElementById('miles');
@@ -59,7 +28,6 @@ function LocationDistance(props) {
             <div className="col-md-auto"><button onClick={changeDistance} type="button" class="btn btn-light km-button">mi/km</button></div>
         </div>   
     );
->>>>>>> TiffanyBranch
 }
 
 export default LocationDistance;
