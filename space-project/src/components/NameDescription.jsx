@@ -4,10 +4,12 @@ import MoreInfo from "./MoreInfo";
 function NameDescription(props) {
     return (
         <div className="name-description">
-            <h1>{props.name}</h1>
-            <p className="description"><ul><li>{props.description}</li><li>Potentially Hazardous?: {props.hazard}</li></ul></p>
+            <h2>{props.name}</h2>
+            <div className="description">
+                <p>Potentially Hazardous?: {props.hazard}</p>
+                <p>{props.description}</p>
+            </div>
             <MoreInfo />
-            {/* <button className="btn btn-light more-button">More Info</button> */}
         </div>
     );
 }

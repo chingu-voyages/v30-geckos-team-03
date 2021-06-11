@@ -6,6 +6,9 @@ import NameDescription from "./NameDescription";
 const AsteroidDetails = (props) => {
     return(
         <div>
+
+            
+
             <LocationDistance
                 astType="Asteroid/Earth"
                 distMiles={props.distance} 

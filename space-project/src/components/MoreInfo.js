@@ -7,7 +7,7 @@ function MoreInfo() {
   }
 
   return (
-  <button onClick={showMoreInfo} className="btn btn-light more-button">More Info</button>
+  <button onClick={showMoreInfo} className="btn btn-light more-button">More<i class="fas fa-caret-down"></i></button>
   // document.getElementById("more-info").style.display = "block";
   );
 }
