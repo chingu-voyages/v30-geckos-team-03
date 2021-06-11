@@ -1,13 +1,17 @@
 import React from "react";
+import MoreInfo from "./MoreInfo";
 
-function AstNameDescription(props) {
+function NameDescription(props) {
     return (
         <div className="name-description">
-            <h1>{props.name}</h1>
-            <p className="description">{props.description}</p>
-            <button className="btn btn-light more-button">More Info</button>
+            <h2>{props.name}</h2>
+            <div className="description">
+                <p>Potentially Hazardous?: {props.hazard}</p>
+                <p>{props.description}</p>
+            </div>
+            <MoreInfo />
         </div>
     );
 }
 
-export default AstNameDescription;
+export default NameDescription;
