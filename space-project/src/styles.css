@@ -59,7 +59,7 @@ html {
 .searchbar {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     padding: 15px;
     margin-left: 15px;
     margin-right: 5px;
@@ -67,7 +67,8 @@ html {
     width: auto;
     height: 2vh;
 
-    background: rgba(229, 229, 229, 0.3);
+    /* background: rgba(229, 229, 229, 0.3); */
+    background: #FFFFFF;
     border-radius: 20px;
 }
 
