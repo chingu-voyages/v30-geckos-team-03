@@ -4,7 +4,6 @@ import React, {useState} from "react";
 import FetchSpaceInfo from "./FetchSpaceInfo";
 import Navbar from './components/Navbar';
 import Image from './components/Image';
-import MoreInfo from './components/MoreInfo';
 import DailyImage from './DailyImage';
 import Searchbar from './Searchbar';
 import Signup from './components/Signup';

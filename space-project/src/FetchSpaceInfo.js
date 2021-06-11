@@ -1,7 +1,7 @@
+
 import React, {useState} from "react";
-import AsteroidDetails from './components/AsteroidDetails';
-import AsteroidCard from './components/AsteroidCard';
-import MoreInfo from './components/MoreInfo';
+import AsteroidDetails from './components/AsteroidDetails'
+import AsteroidCard from './components/AsteroidCard'
 
 const nasa_key=process.env.REACT_APP_NASA_API_KEY;
 
@@ -72,7 +72,7 @@ export default class FetchSpaceInfo extends React.Component {
     const date_keys = Object.keys(dates)
   
     const date_vals=Object.values(dates)
-    let astro_list_compiled=[] //this list will provide all asteroid objects for the dates in question
+    let astro_list_compiled=[]
 
     for (const dv of date_vals){for (const dw of dv){astro_list_compiled.push(dw)}}
 
@@ -130,12 +130,6 @@ export default class FetchSpaceInfo extends React.Component {
             distance={this.state.astro_list_compiled[2].close_approach_data[0].miss_distance.miles + " miles"}
             orbiting={this.state.astro_list_compiled[2].close_approach_data[0].orbiting_body}/></div>
           </div>
-
-
-
-
-        
- 
       </div>
     );
   }

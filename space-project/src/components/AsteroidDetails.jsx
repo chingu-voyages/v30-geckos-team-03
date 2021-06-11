@@ -2,8 +2,8 @@ import React from "react";
 import LocationDistance from "./LocationDistance";
 import NameDescription from "./NameDescription";
 
-function AsteroidDetails(props){
 
+const AsteroidDetails = (props) => {
     return(
         <div>
 
