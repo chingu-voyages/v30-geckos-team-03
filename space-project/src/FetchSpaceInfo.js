@@ -24,7 +24,7 @@ export default class FetchSpaceInfo extends React.Component {
     const data = await response.json();
 
     const dates = data.near_earth_objects
-    
+  
     const date_keys = Object.keys(dates)
     
     const date_vals=Object.values(dates)
@@ -112,6 +112,7 @@ export default class FetchSpaceInfo extends React.Component {
     }
 
     return (
+      <>
       <div style={{display:'flex',flexWrap:'wrap'}}>
         <AsteroidDetails 
         name={this.state.astro_list_compiled[0].name} 
@@ -130,7 +131,9 @@ export default class FetchSpaceInfo extends React.Component {
             distance={this.state.astro_list_compiled[2].close_approach_data[0].miss_distance.miles + " miles"}
             orbiting={this.state.astro_list_compiled[2].close_approach_data[0].orbiting_body}/></div>
           </div>
+
       </div>
+      </>
     );
   }
 }
