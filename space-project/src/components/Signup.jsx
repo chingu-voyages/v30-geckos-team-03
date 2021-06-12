@@ -34,7 +34,7 @@ function Signup() {
             comment: input.comment
         }
 
-        axios.post("http://localhost:3001/Signup", newEmail)
+        axios.post("https://astro-deck.herokuapp.com/Signup", newEmail)
     };
 
     return(
