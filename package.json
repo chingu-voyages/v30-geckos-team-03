@@ -116,7 +116,7 @@
     "build": "cd space-project && npm run build",
     "install-space":"cd space-project && npm install",
     "start": "node server.js",
-    "heroku-postbuild": "npm run install space-project && npm run build",
+    "heroku-postbuild": "npm run install-space && npm run build",
     "space-project": "cd project && npm start"
   },
   "repository": {
