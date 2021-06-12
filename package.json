@@ -113,8 +113,11 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd space-project && npm run build",
+    "install-space":"cd space-project && npm install",
     "start": "node server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix space-project && npm run build --prefix space-project"
+    "heroku-postbuild": "npm run install space-project && npm run build",
+    "space-project": "cd project && npm start"
   },
   "repository": {
     "type": "git",
