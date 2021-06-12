@@ -27,6 +27,6 @@ app.get("/", function(req, res) {
     res.send("Express here!");
 });}
 
-app.listen(port, function() {
+app.listen(port, '0.0.0.0', function() {
     console.log("express server is running on port", port);
 })
