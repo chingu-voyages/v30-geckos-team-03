@@ -21,11 +21,11 @@ if (process.env.NODE_ENV==="production"){
     app.get("*", function(req, res) {
         res.sendFile(path.join(__dirname, 'space-project','build','index.html'));
 
-})}
+});}
 else{
 app.get("/", function(req, res) {
     res.send("Express here!");
-})}
+});}
 
 app.listen(port, function() {
     console.log("express server is running on port", port);
