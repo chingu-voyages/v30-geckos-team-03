@@ -15,7 +15,7 @@ function Comments() {
                 return res.json()
             }
         }).then(jsonRes => setComments(jsonRes));
-    })
+    },[]);
 
     return(
         <div>
