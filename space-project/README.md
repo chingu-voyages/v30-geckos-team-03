@@ -8,6 +8,8 @@ This project is currently in development. Users can search any date and will see
 
 ## Project How To
 
+When you first open the application it will display the current days near earth object.
+
 ![Start](https://github.com/chingu-voyages/v30-geckos-team-03/blob/DevelopmentBranch/space-project/src/components/images/Asteroids.png)
 
 
