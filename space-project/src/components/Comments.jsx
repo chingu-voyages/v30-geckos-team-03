@@ -15,12 +15,12 @@ function Comments() {
                 return res.json()
             }
         }).then(jsonRes => setComments(jsonRes));
-    },[setComments]);
+    },[]);
 
     return(
         <div>
             <Navbar 
-                    brandhref="/Comments"
+                    brandhref="/"
                     brandName="Comments"
                     firstLink="/"
                     firstLinkName="Home"
