@@ -7,7 +7,6 @@ function AsteroidCard(props){
                 <h5>{props.name}</h5>
                 <p>Orbiting: {props.orbiting}</p>
                 <p>Close Approach Distance: {props.distance}</p>
-                {/* <img alt="CardImage"></img> */}
             </div>
         </div>
     );

@@ -128,6 +128,7 @@ export default class FetchSpaceInfo extends React.Component {
             <div className="col-md-auto"><AsteroidCard name={this.state.astro_list_compiled[1].name} 
             distance={this.state.astro_list_compiled[1].close_approach_data[0].miss_distance.miles + " miles"}
             orbiting={this.state.astro_list_compiled[1].close_approach_data[0].orbiting_body}/></div>
+            
             <div className="col-md-auto"><AsteroidCard name={this.state.astro_list_compiled[2].name} 
             distance={this.state.astro_list_compiled[2].close_approach_data[0].miss_distance.miles + " miles"}
             orbiting={this.state.astro_list_compiled[2].close_approach_data[0].orbiting_body}/></div>
