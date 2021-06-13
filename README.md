@@ -1,4 +1,4 @@
-# AsteroWatch
+# AstroWatch
 
 An application used to display data from NASA's near earth objects API, built with React, Javascript, and CSS. Also, utilizes MongoDB to collect users information for near earth objects updates.
 
