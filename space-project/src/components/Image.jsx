@@ -4,8 +4,8 @@ import DailyImage from '../DailyImage';
 
 function Image(){
     return(
-        <div className="image">
-            <img src={asteroid} alt="asteroid" />
+        <div>
+            <img className="image" src={asteroid} alt="asteroid" />
         </div>
     );
 }
