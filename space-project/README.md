@@ -6,7 +6,7 @@ An application used to display data from NASA's near earth objects API, built wi
 
 This project is currently in development. Users can search any date and will see information about the near earth object on that date. 
 
-## How To
+## Project Screen Shots
 
 When you first open the application it will display the current days near earth object
 
