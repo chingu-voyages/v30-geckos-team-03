@@ -55,6 +55,7 @@ export default class DailyImage extends React.Component {
           </div>
 
           <div className="col-md-5">
+            
             <img className="image" alt="Uh Oh. The Daily Image is not loading today." src={this.state.info2.url}/> 
           </div>
 
