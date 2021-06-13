@@ -56,7 +56,7 @@ export default class DailyImage extends React.Component {
           </div>
 
           <div className="col-md-5">
-            {this.state.info2.media_type==="video"? <p><a href={this.state.info2.url}>Today's Image is a Video: Click Here</a></p>:
+            {this.state.info2.media_type==="video"? <p><a href={this.state.info2.url}target="_blank" rel="noopener noreferrer">Today's Image is a Video: Click Here</a></p>:
             <img className="image" alt="Uh Oh. The Daily Image is not loading today." src={this.state.info2.url}/>
             }
           </div>
