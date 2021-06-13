@@ -16,13 +16,23 @@ Click on the input and select the date you wish to find near earth object data o
 
 ![Calendar](https://github.com/chingu-voyages/v30-geckos-team-03/blob/DevelopmentBranch/space-project/src/components/images/ReadMe/Calendar.png)
 
+The new near earth object data will display and then click the MORE button to see more data
+
 ![More Info](https://github.com/chingu-voyages/v30-geckos-team-03/blob/DevelopmentBranch/space-project/src/components/images/ReadMe/MoreInfo.png)
+
+The cards display the next two closest near earth objects to the one you have searched
 
 ![Card Data](https://github.com/chingu-voyages/v30-geckos-team-03/blob/DevelopmentBranch/space-project/src/components/images/ReadMe/CardInfo.png)
 
+The sign up link will bring you to a sign up for that will add a user to a list for near earth objects updates. Also, you can add a comment to this form.
+
 ![Sign Up](https://github.com/chingu-voyages/v30-geckos-team-03/blob/DevelopmentBranch/space-project/src/components/images/ReadMe/SignUp.png)
 
+Here is where all the comments will be displayed for everyone to see.
+
 ![Comment](https://github.com/chingu-voyages/v30-geckos-team-03/blob/DevelopmentBranch/space-project/src/components/images/ReadMe/Comments.png)
+
+The daily image page will display NASA's daily image and description.
 
 ![Daily Image](https://github.com/chingu-voyages/v30-geckos-team-03/blob/DevelopmentBranch/space-project/src/components/images/ReadMe/DailyImage.png)
 
