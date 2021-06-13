@@ -26,7 +26,7 @@ function App() {
                 <div className="col-md-7">
                   <Navbar 
                     brandhref="/"
-                    brandName="Asteroids"
+                    brandName="AstroWatch"
                     firstLink="/Signup"
                     firstLinkName="Sign Up"
                     secondLink="/Comments"
