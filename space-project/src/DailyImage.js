@@ -63,8 +63,6 @@ export default class DailyImage extends React.Component {
 
         </div>
                 
-        {/* style={{maxHeight: '100px', maxWidth: '200px'}} */}
-        {/* this.state.info2.url */}
  
       </div>
     );
