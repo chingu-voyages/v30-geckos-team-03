@@ -15,6 +15,8 @@ export default class DailyImage extends React.Component {
     const response2=await fetch(url2);
     const data2=await response2.json();
 
+    console.log(data2);
+
     this.setState({ info2:data2, loading: false });
      
   }
@@ -44,8 +46,12 @@ export default class DailyImage extends React.Component {
                     thirdLinkName="Comments"
                   />
       
-        <div>{this.state.info2.title}: ©{this.state.info2.copyright} <br></br>
-        <img className="daily-image" src={this.state.info2.url} style={{maxHeight: '100px', maxWidth: '200px'}}/> <br></br> {this.state.info2.explanation}</div>
+        <div>
+          {this.state.info2.title}: ©{this.state.info2.copyright} <br></br>
+          <a href={this.state.info2.url}>Today's Image is a Video: Click Here</a>
+        {/* <img className="daily-image" src={this.state.info2.url} style={{maxHeight: '100px', maxWidth: '200px'}}/>  */}
+        <br></br> {this.state.info2.explanation}
+        </div>
          
  
       </div>
