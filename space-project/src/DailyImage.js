@@ -51,7 +51,7 @@ export default class DailyImage extends React.Component {
           <div className="col-md-7">
             <p>A different astronomy and space science related image is featured each day, along with a brief explanation.</p>
             <p className="image-description">{this.state.info2.title}: ©{this.state.info2.copyright}</p>
-            {this.state.info2.media_type ==="video" && <p><a href={this.state.info2.url}>Today's Image is a Video: Click Here</a></p>}
+            {this.state.info2.media_type ==="video" && <p><a href={this.state.info2.url}target="_blank" rel="noopener noreferrer">Today's Image is a Video: Click Here</a></p>}
             <p>{this.state.info2.explanation}</p>
           </div>
 
