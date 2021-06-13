@@ -16,8 +16,6 @@ export default class DailyImage extends React.Component {
     const response2=await fetch(url2);
     const data2=await response2.json();
 
-    console.log(data2);
-
     this.setState({ info2:data2, loading: false });
      
   }
