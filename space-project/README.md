@@ -8,7 +8,7 @@ This project is currently in development. Users can search any date and will see
 
 ## Project How To
 
-![Start](https://github.com/chingu-voyages/v30-geckos-team-03/blob/DevelopmentBranch/space-project/src/components/images/Page1.png)
+![Start](https://github.com/chingu-voyages/v30-geckos-team-03/blob/DevelopmentBranch/space-project/src/components/images/Asteroids.png)
 
 
 ## Installation and Setup Instructions
