@@ -3,14 +3,18 @@ const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
 const path = require("path");
+const dotenv = require("dotenv");
 
 app.use(cors());
 app.use(express.json());
 
 const port = process.env.PORT || 3001
 
+dotenv.config();
+
 //connect to mongoose
-mongoose.connect("mongodb+srv://jackie-admin:asteroid123@cluster0.mma4u.mongodb.net/asteroidDB")
+const mongo=process.env.MONGODB_URI
+mongoose.connect(mongo, {useNewUrlParser: true})
 
 //require route
 app.use("/", require("./routes/userRoute"));
