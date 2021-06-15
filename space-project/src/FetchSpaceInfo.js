@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+
+import React from "react";
 import AsteroidDetails from './components/AsteroidDetails'
 import AsteroidCard from './components/AsteroidCard'
 
@@ -23,7 +24,7 @@ export default class FetchSpaceInfo extends React.Component {
     const data = await response.json();
 
     const dates = data.near_earth_objects
-    
+  
     const date_keys = Object.keys(dates)
     
     const date_vals=Object.values(dates)
@@ -93,6 +94,7 @@ export default class FetchSpaceInfo extends React.Component {
       <li>Minimum Diameter in Meters: {myitem.estimated_diameter.meters.estimated_diameter_min}</li>
       <li>Maximum Diameter in Meters: {myitem.estimated_diameter.meters.estimated_diameter_max}</li>
       </span>
+
       
     </ul>)});
     let hazard=JSON.stringify(astro_list_compiled[0].is_potentially_hazardous_asteroid)
@@ -111,6 +113,7 @@ export default class FetchSpaceInfo extends React.Component {
     }
 
     return (
+      <>
       <div style={{display:'flex',flexWrap:'wrap'}}>
         <AsteroidDetails 
         name={this.state.astro_list_compiled[0].name} 
@@ -125,17 +128,14 @@ export default class FetchSpaceInfo extends React.Component {
             <div className="col-md-auto"><AsteroidCard name={this.state.astro_list_compiled[1].name} 
             distance={this.state.astro_list_compiled[1].close_approach_data[0].miss_distance.miles + " miles"}
             orbiting={this.state.astro_list_compiled[1].close_approach_data[0].orbiting_body}/></div>
+            
             <div className="col-md-auto"><AsteroidCard name={this.state.astro_list_compiled[2].name} 
             distance={this.state.astro_list_compiled[2].close_approach_data[0].miss_distance.miles + " miles"}
             orbiting={this.state.astro_list_compiled[2].close_approach_data[0].orbiting_body}/></div>
           </div>
 
-
-
-
-        
- 
       </div>
+      </>
     );
   }
 }

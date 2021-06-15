@@ -2,6 +2,8 @@
   "name": "v30-geckos-team-03",
   "version": "1.0.0",
   "description": "",
+  "engines":{"npm": "6.14.10",
+            "node": "14.15.4"},
   "main": "server.js",
   "dependencies": {
     "accepts": "^1.3.7",
@@ -113,7 +115,11 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "build": "cd space-project && npm run build",
+    "install-space":"cd space-project && npm install",
+    "start": "node server.js",
+    "heroku-postbuild": "npm run install-space && npm run build",
+    "space-project": "cd space-project && npm start"
   },
   "repository": {
     "type": "git",

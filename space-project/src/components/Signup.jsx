@@ -1,11 +1,14 @@
 import React, {useState} from "react";
+import { Link } from 'react-router-dom';
 import axios from "axios";
+import Navbar from "./Navbar";
 
 function Signup() {
 
     const [input, setInput] = useState({
         fullName:"",
-        email:""
+        email:"",
+        comment: ""
     });
 
     const [submitted, setSubmitted] = useState(false);
@@ -26,18 +29,29 @@ function Signup() {
         setSubmitted(true);
 
         const newEmail = {
-            fullName: input.name, 
-            email: input.email
+            fullName: input.fullName, 
+            email: input.email,
+            comment: input.comment
         }
 
-        axios.post("http://localhost:3001/Signup", newEmail)
+        axios.post("https://astro-deck.herokuapp.com/Signup", newEmail)
     };
 
     return(
         <div>
-            <div className="row container-fluid">
+            <div className="row">
                 <div className="col-md-8 signup-content">
-                    <h1>Sign Up</h1>
+                    <Navbar 
+                    brandhref="/Signup"
+                    brandName="Signup"
+                    firstLink="/"
+                    firstLinkName="Home"
+                    secondLink="/Comments"
+                    secondLinkName="Comments"
+                    thirdLink="/DailyImage"
+                    thirdLinkName="Daily Image"
+                    />
+
                     <p className="signup-p">Do you want asteroids to head straight for your inbox?</p> 
                     <p className="signup-p">Sign up below for our monthly newsletter!</p>
 
@@ -50,10 +64,17 @@ function Signup() {
                             <label>Email</label>
                             <input type="email" name="email" value={input.email} onChange={handleChange} className="form-control signup-input" required></input>
                         </div>
-                        
+                        <div className="name-email">
+                            <label>Leave a comment (optional)</label>
+                            <input type="text" name="comment" value={input.comment} onChange={handleChange} className="form-control signup-input"></input>
+                        </div>
+
                         <p className="terms">By clicking submit, you agree to the terms of service and our privacy policy. </p>
 
-                        <button onClick={handleClick} type="submit" className="btn btn-light">Submit</button>
+                        <button onClick={handleClick} type="submit" className="btn btn-light signup-btn">Submit</button>
+                        <a><Link className="links" to="/"><i id="back-btn" class="fas fa-arrow-circle-left"></i></Link></a>
+
+
                     </form>
                     
                 </div>

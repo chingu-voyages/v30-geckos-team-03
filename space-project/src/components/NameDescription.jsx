@@ -1,14 +1,25 @@
-import React from "react";
-import MoreInfo from "./MoreInfo";
+import React, {useState} from "react";
 
+function NameDescription(props) {
+    const [displayNone, setDisplayNone] = useState(true);
 
-const NameDescription = (props) => {
+    function showMoreInfo() {
+        setDisplayNone(!displayNone);
+        displayNone ? document.getElementById("more-info").style.display = "block" : document.getElementById("more-info").style.display = "none";
+
+    }
+
     return (
         <div className="name-description">
-            <h1>{props.name}</h1>
-            <p className="description"><ul><li>{props.description}</li><li>Potentially Hazardous?: {props.hazard}</li></ul></p>
-            <MoreInfo />
-            {/* <button className="btn btn-light more-button">More Info</button> */}
+            <h2>{props.name}</h2>
+            <div className="description">
+                <p>Potentially Hazardous?: {props.hazard}</p>
+                <p>{props.description}</p> 
+            </div>
+            <button onClick={showMoreInfo} className="btn btn-light more-button">
+                {displayNone ? "More" : "Less"}
+            </button>
+
         </div>
     );
 }
