@@ -24,39 +24,62 @@ function App() {
       <div className="App">
         <div className="container-fluid">
           <Switch>
+            <Route exact path="/">
+              <Navbar
+                brandhref="/"
+                brandName="Home"
+                firstLink="/Asteroid"
+                firstLinkName="Asteroid"
+                secondLink="/Planets"
+                secondLinkName="Planets"
+                thirdLink="/Comments"
+                thirdLinkName="Comments"
+                fourthLink="/SignUp"
+                fourthLinkName="Sign Up"
+              />
+              <DailyImage />
+            </Route>
+
             <Route exact path="/Planets">
               <Navbar
                 brandhref="/Planets"
                 brandName="Planets"
-                firstLink="/Signup"
-                firstLinkName="Sign Up"
-                secondLink="/Comments"
-                secondLinkName="Comments"
-                thirdLink="/DailyImage"
-                thirdLinkName="DailyImage"
-                fourthLink="/"
-                fourthLinkName="Asteroid"
+                firstLink="/H"
+                firstLinkName="Home"
+                secondLink="/Asteroid"
+                secondLinkName="Asteroid"
+                thirdLink="/Comments"
+                thirdLinkName="Comments"
+                fourthLink="/SignUp"
+                fourthLinkName="Sign Up"
               />
-              <Searchbar />
+              <Searchbar
+                topic={"Search a Planet for more info: "}
+                type={"text"}
+              />
               <FecthPlanetInfo />
             </Route>
-            <Route exact path="/">
+
+            <Route exact path="/Asteroid">
               <div className="row">
                 <div className="col-md-7">
                   <Navbar
-                    brandhref="/"
+                    brandhref="/Asteroid"
                     brandName="AstroWatch"
-                    firstLink="/Signup"
-                    firstLinkName="Sign Up"
-                    secondLink="/Comments"
-                    secondLinkName="Comments"
-                    thirdLink="/DailyImage"
-                    thirdLinkName="DailyImage"
-                    fourthLink="/Planets"
-                    fourthLinkName="Planets"
+                    firstLink="/"
+                    firstLinkName="Home"
+                    secondLink="/Planets"
+                    secondLinkName="Planets"
+                    thirdLink="/Comments"
+                    thirdLinkName="Comments"
+                    fourthLink="/SignUp"
+                    fourthLinkName="Sign Up"
                   />
                   <Searchbar
-                    topic={"Search for Asteroids based on their closest approach date to Earth:"}
+                    topic={
+                      "Search for Asteroids based on their closest approach date to Earth:"
+                    }
+                    type={"date"}
                     date={date}
                     setLookupDate={setLookupDate}
                     onChange={onChange}
@@ -70,52 +93,36 @@ function App() {
               </div>
             </Route>
 
+            <Route exact path="/Comments">
+              <Navbar
+                brandhref="/Comments"
+                brandName="Comments"
+                firstLink="/"
+                firstLinkName="Home"
+                secondLink="/Planets"
+                secondLinkName="Planets"
+                thirdLink="/Asteroid"
+                thirdLinkName="Asteroid"
+                fourthLink="/SignUp"
+                fourthLinkName="Sign Up"
+              />
+              <Comments />
+            </Route>
+
             <Route exact path="/Signup">
               <Navbar
                 brandhref="/Signup"
                 brandName="Signup"
                 firstLink="/"
-                firstLinkName="Asteroid"
-                secondLink="/Comments"
-                secondLinkName="Comments"
-                thirdLink="/DailyImage"
-                thirdLinkName="Daily Image"
-                fourthLink="/Planets"
-                fourthLinkName="Planets"
+                firstLinkName="Home"
+                secondLink="/Planets"
+                secondLinkName="Planets"
+                thirdLink="/Asteroid"
+                thirdLinkName="Asteroid"
+                fourthLink="/Comments"
+                fourthLinkName="Comments"
               />
               <Signup />
-            </Route>
-
-            <Route exact path="/Comments">
-              <Navbar
-                brandhref="/"
-                brandName="Comments"
-                firstLink="/"
-                firstLinkName=""
-                secondLink="/Signup"
-                secondLinkName="Sign Up"
-                thirdLink="/DailyImage"
-                thirdLinkName="Daily Image"
-                fourthLink="/Planets"
-                fourthLinkName="Planets"
-              />
-              <Comments />
-            </Route>
-
-            <Route exact path="/DailyImage">
-              <Navbar
-                brandhref="/DailyImage"
-                brandName="Daily Image"
-                firstLink="/"
-                firstLinkName="Home"
-                secondLink="/Signup"
-                secondLinkName="Sign Up"
-                thirdLink="/Comments"
-                thirdLinkName="Comments"
-                fourthLink="/Planets"
-                fourthLinkName="Planets"
-              />
-              <DailyImage />
             </Route>
           </Switch>
         </div>

@@ -1,5 +1,4 @@
-import React, {useState} from "react";
-import earth from "./components/images/earth.jpg";
+import React from "react";
 
 const nasa_key=process.env.REACT_APP_NASA_API_KEY;
 
