@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import Navbar from "./components/Navbar";
 import earth from "./components/images/earth.jpg";
 
 const nasa_key=process.env.REACT_APP_NASA_API_KEY;
@@ -32,16 +31,7 @@ export default class DailyImage extends React.Component {
     return (
       
       <div>
-                  <Navbar 
-                    brandhref="/DailyImage"
-                    brandName="Daily Image"
-                    firstLink="/"
-                    firstLinkName="Home"
-                    secondLink="/Signup"
-                    secondLinkName="Sign Up"
-                    thirdLink="/Comments"
-                    thirdLinkName="Comments"
-                  />
+                
       
         
         <div className="row">

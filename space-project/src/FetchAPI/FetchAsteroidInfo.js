@@ -1,11 +1,11 @@
 
 import React from "react";
-import AsteroidDetails from './components/AsteroidDetails'
-import AsteroidCard from './components/AsteroidCard'
+import AsteroidDetails from '../components/AsteroidDetails'
+import AsteroidCard from '../components/AsteroidCard'
 
 const nasa_key=process.env.REACT_APP_NASA_API_KEY;
 
-export default class FetchSpaceInfo extends React.Component {
+export default class FetchAsteroidInfo extends React.Component {
 
   state = {
     loading: true,
@@ -36,9 +36,6 @@ export default class FetchSpaceInfo extends React.Component {
     astro_list_compiled.sort((a,b)=>{ return a.close_approach_data[0].miss_distance.kilometers-b.close_approach_data[0].miss_distance.kilometers;})
 
     let astros=astro_list_compiled.map(function compile(myitem){return(<ul>
-      <li>Name: {myitem.name}</li>
-      <li>Orbiting: {myitem.close_approach_data[0].orbiting_body}</li>
-      <li>JPL ID: {myitem.id}</li>
       <li>Close Approach Date: {myitem.close_approach_data[0].close_approach_date_full}</li>
       <li>Distance in Miles: {myitem.close_approach_data[0].miss_distance.miles}</li>
       <li>Distance in Kilometers: {myitem.close_approach_data[0].miss_distance.kilometers}</li>
@@ -50,6 +47,7 @@ export default class FetchSpaceInfo extends React.Component {
       <li>Maximum Diameter in Feet: {myitem.estimated_diameter.feet.estimated_diameter_max}</li>
       <li>Minimum Diameter in Meters: {myitem.estimated_diameter.meters.estimated_diameter_min}</li>
       <li>Maximum Diameter in Meters: {myitem.estimated_diameter.meters.estimated_diameter_max}</li>
+      <li>JPL ID: {myitem.id}</li>
       </span>
       
     </ul>)});
@@ -79,9 +77,7 @@ export default class FetchSpaceInfo extends React.Component {
     astro_list_compiled.sort((a,b)=>{ return a.close_approach_data[0].miss_distance.kilometers-b.close_approach_data[0].miss_distance.kilometers;})
 
     let astros=astro_list_compiled.map(function compile(myitem){return(<ul>
-      <li>Name: {myitem.name}</li>
-      <li>Orbiting: {myitem.close_approach_data[0].orbiting_body}</li>
-      <li>JPL ID: {myitem.id}</li>
+      
       <li>Close Approach Date: {myitem.close_approach_data[0].close_approach_date_full}</li>
       <li>Distance in Miles: {myitem.close_approach_data[0].miss_distance.miles}</li>
       <li>Distance in Kilometers: {myitem.close_approach_data[0].miss_distance.kilometers}</li>
@@ -93,6 +89,7 @@ export default class FetchSpaceInfo extends React.Component {
       <li>Maximum Diameter in Feet: {myitem.estimated_diameter.feet.estimated_diameter_max}</li>
       <li>Minimum Diameter in Meters: {myitem.estimated_diameter.meters.estimated_diameter_min}</li>
       <li>Maximum Diameter in Meters: {myitem.estimated_diameter.meters.estimated_diameter_max}</li>
+      <li>JPL ID: {myitem.id}</li>
       </span>
 
       
