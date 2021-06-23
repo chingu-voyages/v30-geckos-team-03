@@ -231,6 +231,18 @@ font-size: 12px;
     margin-top: 10px;
 }
 
+#full-text {
+    display: none;
+}
+
+#daily-less-btn {
+    display: none;
+}
+
+#spliced-text {
+    display: visible;
+}
+
 /* Media Queries */
 @media only screen and (max-width: 700px) {
     .image img {
