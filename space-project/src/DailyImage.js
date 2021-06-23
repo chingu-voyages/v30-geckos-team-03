@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Navbar from "./components/Navbar";
+import earth from "./components/images/earth.jpg";
 
 const nasa_key=process.env.REACT_APP_NASA_API_KEY;
 
@@ -69,14 +70,15 @@ export default class DailyImage extends React.Component {
           <div className="col-md-7">
             <p>A different astronomy and space science related image is featured each day, along with a brief explanation.</p>
             <p className="image-description">{this.state.info2.title}: ©{this.state.info2.copyright}</p>
-            <p id="sliced-text">{this.state.info2.explanation.slice(0,500)}<span id="dots">...</span></p>
+            <p id="sliced-text">{this.state.info2.explanation.slice(0,500)}<span id="dots">...</span>
             <span id="full-text">{this.state.info2.explanation.slice(500, (this.state.info2.explanation.length))}</span>
+            </p>
             <button id="daily-more-btn" className="btn btn-light more-button" onClick={this.readMore.bind(this)}>More</button>
             <button id="daily-less-btn" className="btn btn-light more-button" onClick={this.readLess.bind(this)}>Less</button>
           </div>
 
           <div className="col-md-5">
-            <img className="image" alt="Uh Oh. The Daily Image is not loading today." src={this.state.info2.url}/> 
+            <img className="image" alt="The image is not loading today." src={this.state.info2.url}/> 
           </div>
 
         </div>
