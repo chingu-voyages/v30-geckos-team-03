@@ -94,6 +94,7 @@ export default class FetchSpaceInfo extends React.Component {
       <li>Minimum Diameter in Meters: {myitem.estimated_diameter.meters.estimated_diameter_min}</li>
       <li>Maximum Diameter in Meters: {myitem.estimated_diameter.meters.estimated_diameter_max}</li>
       </span>
+
       
     </ul>)});
     let hazard=JSON.stringify(astro_list_compiled[0].is_potentially_hazardous_asteroid)
