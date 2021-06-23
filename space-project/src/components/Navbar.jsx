@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 
-function Navbar(props) {
+const Navbar = (props) => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark">
@@ -20,7 +20,6 @@ function Navbar(props) {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav nav-features">
-          <h5 className="nav-item nav-link active test"><Link className="links" to={props.HomeLink}>{props.HomeLinkName}</Link></h5>
             <h5 className="nav-item nav-link active test"><Link className="links" to={props.firstLink}>{props.firstLinkName}</Link></h5>
             <h5 className="nav-item nav-link"><Link className="links" to={props.secondLink}>{props.secondLinkName}</Link></h5>
             <h5 className="nav-item nav-link"><Link className="links" to={props.thirdLink}>{props.thirdLinkName}</Link></h5>

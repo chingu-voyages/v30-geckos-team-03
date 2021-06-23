@@ -20,14 +20,15 @@ const Comments = () => {
   }, []);
 
   return (
-    <div>
-      
-      {comments.map((comment) => (
-        <div>
-          <p>{comment.comment}</p>
-        </div>
-      ))}
-    </div>
+    <>
+      <div>
+        {comments.map((comment) => (
+          <div>
+            <p>{comment.comment}</p>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

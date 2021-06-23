@@ -19,6 +19,9 @@ function App() {
   const onChange = (event) => {
     setLookupDate(event.target.value);
   };
+
+  const [id, setId] = useState("");
+
   return (
     <Router>
       <div className="App">
@@ -28,51 +31,54 @@ function App() {
               <Navbar
                 brandhref="/"
                 brandName="Home"
-                firstLink="/Asteroid"
-                firstLinkName="Asteroid"
-                secondLink="/Planets"
-                secondLinkName="Planets"
-                thirdLink="/Comments"
+                firstLink="/planets"
+                firstLinkName="Planets"
+                secondLink="/asteroids"
+                secondLinkName="AstroWatch"
+                thirdLink="/comments"
                 thirdLinkName="Comments"
-                fourthLink="/SignUp"
+                fourthLink="/signUp"
                 fourthLinkName="Sign Up"
               />
               <DailyImage />
             </Route>
 
-            <Route exact path="/Planets">
+            <Route exact path="/planets">
               <Navbar
-                brandhref="/Planets"
+                brandhref="/planets"
                 brandName="Planets"
-                firstLink="/H"
+                firstLink="/"
                 firstLinkName="Home"
-                secondLink="/Asteroid"
-                secondLinkName="Asteroid"
-                thirdLink="/Comments"
+                secondLink="/asteroids"
+                secondLinkName="AstroWatch"
+                thirdLink="/comments"
                 thirdLinkName="Comments"
-                fourthLink="/SignUp"
+                fourthLink="/signUp"
                 fourthLinkName="Sign Up"
               />
               <Searchbar
                 topic={"Search a Planet for more info: "}
                 type={"text"}
+                value={id}
+                onChange={(e) => setId(e.target.value)}
+                placeholder={"Search a Planet"}
               />
-              <FecthPlanetInfo />
+              <FecthPlanetInfo id={id} />
             </Route>
 
-            <Route exact path="/Asteroid">
+            <Route exact path="/asteroids">
               <div className="row">
                 <div className="col-md-7">
                   <Navbar
-                    brandhref="/Asteroid"
+                    brandhref="/asteroids"
                     brandName="AstroWatch"
                     firstLink="/"
                     firstLinkName="Home"
-                    secondLink="/Planets"
+                    secondLink="/planets"
                     secondLinkName="Planets"
-                    thirdLink="/Comments"
+                    thirdLink="/comments"
                     thirdLinkName="Comments"
-                    fourthLink="/SignUp"
+                    fourthLink="/signUp"
                     fourthLinkName="Sign Up"
                   />
                   <Searchbar
@@ -80,7 +86,7 @@ function App() {
                       "Search for Asteroids based on their closest approach date to Earth:"
                     }
                     type={"date"}
-                    date={date}
+                    value={date}
                     setLookupDate={setLookupDate}
                     onChange={onChange}
                   />
@@ -93,33 +99,33 @@ function App() {
               </div>
             </Route>
 
-            <Route exact path="/Comments">
+            <Route exact path="/comments">
               <Navbar
-                brandhref="/Comments"
+                brandhref="/comments"
                 brandName="Comments"
                 firstLink="/"
                 firstLinkName="Home"
-                secondLink="/Planets"
+                secondLink="/planets"
                 secondLinkName="Planets"
-                thirdLink="/Asteroid"
-                thirdLinkName="Asteroid"
-                fourthLink="/SignUp"
+                thirdLink="/asteroids"
+                thirdLinkName="AstroWatch"
+                fourthLink="/signUp"
                 fourthLinkName="Sign Up"
               />
               <Comments />
             </Route>
 
-            <Route exact path="/Signup">
+            <Route exact path="/signup">
               <Navbar
-                brandhref="/Signup"
+                brandhref="/signup"
                 brandName="Signup"
                 firstLink="/"
                 firstLinkName="Home"
-                secondLink="/Planets"
+                secondLink="/planets"
                 secondLinkName="Planets"
-                thirdLink="/Asteroid"
-                thirdLinkName="Asteroid"
-                fourthLink="/Comments"
+                thirdLink="/asteroids"
+                thirdLinkName="AstroWatch"
+                fourthLink="/comments"
                 fourthLinkName="Comments"
               />
               <Signup />

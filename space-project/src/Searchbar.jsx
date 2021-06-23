@@ -5,7 +5,7 @@ const Searchbar = (props) => {
   return(
     <div>
       <p>{props.topic}</p>
-      <input className="searchbar form-control" type={props.type} value={props.date} placeholder={props.placeholder} onChange={props.onChange} />
+      <input className="searchbar form-control" type={props.type} value={props.value} placeholder={props.placeholder} onChange={props.onChange} />
     </div>
   )
 }
