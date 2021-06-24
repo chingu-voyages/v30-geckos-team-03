@@ -1,23 +1,25 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
 const FecthPlanetInfo = (props) => {
   const [planet, setPlanet] = useState({});
 
-  const fetchPlanet = async () => {
-    let response = await fetch(
-      `https://api.le-systeme-solaire.net/rest/bodies/`
-    );
-    response = await response.json();
-    let data = response;
-    setPlanet(data);
-    console.log(planet);
-  };
+  
 
   useEffect(() => {
-    fetchPlanet().then(() => console.log(planet));
+    const fetchPlanet = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.le-systeme-solaire.net/rest/bodies/`
+        );
+        setPlanet(response.data);
+        console.log(planet);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchPlanet();
   }, []);
-
- 
 
   return (
     <>
