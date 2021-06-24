@@ -13,14 +13,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
+  const [planetSearch, setPlanetSearch] = useState("");
+
   const setLookupDate = (date) => {
     setDate((CurrentDate) => date);
   };
-  const onChange = (event) => {
-    setLookupDate(event.target.value);
-  };
-
-  const [id, setId] = useState("");
 
   return (
     <Router>
@@ -59,11 +56,10 @@ function App() {
               <Searchbar
                 topic={"Search a Planet for more info: "}
                 type={"text"}
-                value={id}
-                onChange={(e) => setId(e.target.value)}
+                onChange={(e) => setPlanetSearch(e.target.value)}
                 placeholder={"Search a Planet"}
               />
-              <FecthPlanetInfo id={id} />
+              <FecthPlanetInfo planetSearch={planetSearch} />
             </Route>
 
             <Route exact path="/asteroids">
@@ -88,7 +84,7 @@ function App() {
                     type={"date"}
                     value={date}
                     setLookupDate={setLookupDate}
-                    onChange={onChange}
+                    onChange={(e) => setLookupDate(e.target.value)}
                   />
                   <FetchAsteroidInfo date={date} />
                 </div>

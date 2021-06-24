@@ -16,7 +16,7 @@ export default class FetchAsteroidInfo extends React.Component {
   
   async componentDidMount() {
     const startDate=this.props.date;
-  
+
     const endDate=startDate;
     
     const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${this.props.date}&end_date=${this.props.date}&api_key=${nasa_key}`;
@@ -24,8 +24,7 @@ export default class FetchAsteroidInfo extends React.Component {
     const data = await response.json();
 
     const dates = data.near_earth_objects
-  
-    const date_keys = Object.keys(dates)
+
     
     const date_vals=Object.values(dates)
     
@@ -67,7 +66,6 @@ export default class FetchAsteroidInfo extends React.Component {
     const response = await fetch(url);
     const data = await response.json();
     const dates = data.near_earth_objects;
-    const date_keys = Object.keys(dates)
   
     const date_vals=Object.values(dates)
     let astro_list_compiled=[]

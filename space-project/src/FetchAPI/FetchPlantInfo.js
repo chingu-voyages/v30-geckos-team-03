@@ -1,30 +1,30 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
 
 const FecthPlanetInfo = (props) => {
-  const [planet, setPlanet] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const [planetData, setPlanetData] = useState({});
 
+  
+  const fetchPlanetData = async () => {
+    const planet = props.planetSearch
+    const res = await fetch(`https://api.le-systeme-solaire.net/rest/bodies/moon`);
+    setPlanetData(await res.json());
+    setIsLoading(false);
+  };
   
 
   useEffect(() => {
-    const fetchPlanet = async () => {
-      try {
-        const response = await axios.get(
-          `https://api.le-systeme-solaire.net/rest/bodies/`
-        );
-        setPlanet(response.data);
-        console.log(planet);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-    fetchPlanet();
+    fetchPlanetData();
   }, []);
 
-  return (
+  return isLoading ? (
+    "Loading.."
+  ) : (
     <>
       <div className="container">
-        <div className="row">{planet.bodies[0].englishName}</div>
+        <div className="row">
+          <p>{planetData.name}</p>
+        </div>
       </div>
     </>
   );

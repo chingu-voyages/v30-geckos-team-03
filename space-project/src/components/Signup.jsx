@@ -90,19 +90,18 @@ const Signup = () => {
             >
               Submit
             </button>
-            <a>
-              <Link className="links" to="/">
-                <i id="back-btn" class="fas fa-arrow-circle-left"></i>
-              </Link>
-            </a>
+
+            <Link className="links" to="/">
+              <i id="back-btn" className="fas fa-arrow-circle-left"></i>
+            </Link>
           </form>
         </div>
         <div className="col-md-4 signup-content">
           <h1>
-            {!submitted ? <h1></h1> : <h1>Thank you, {input.fullName}!</h1>}
+            {!submitted ? <h1>{}</h1> : <h1>Thank you, {input.fullName}!</h1>}
           </h1>
           <div className="icon hvr-buzz">
-            <i class="fas fa-meteor"></i>
+            <i className="fas fa-meteor"></i>
           </div>
           <div>
             {!submitted ? (
