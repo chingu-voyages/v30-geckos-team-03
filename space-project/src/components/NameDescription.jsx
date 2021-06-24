@@ -13,8 +13,8 @@ function NameDescription(props) {
         <div className="name-description">
             <h2>{props.name}</h2>
             <div className="description">
-                <p>Potentially Hazardous?: {props.hazard}</p>
-                <p>{props.description}</p> 
+                <span>Potentially Hazardous: {props.hazard}</span>
+                <span>{props.description}</span> 
             </div>
             <button onClick={showMoreInfo} className="btn btn-light more-button">
                 {displayNone ? "More" : "Less"}

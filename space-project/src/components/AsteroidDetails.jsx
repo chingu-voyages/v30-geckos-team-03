@@ -10,7 +10,7 @@ const AsteroidDetails = (props) => {
             
 
             <LocationDistance
-                astType="Asteroid/Earth"
+                astType="Orbiting/Earth"
                 distMiles={props.distance} 
                 distKm={props.distance_km}/>
             <NameDescription 
