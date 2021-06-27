@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
 
+
 const FecthPlanetInfo = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [planetData, setPlanetData] = useState({});
 
-  
-  const fetchPlanetData = async () => {
-    const planet = props.planetSearch
-    const res = await fetch(`https://api.le-systeme-solaire.net/rest/bodies/moon`);
-    setPlanetData(await res.json());
-    setIsLoading(false);
-  };
-  
-
   useEffect(() => {
+    const url = `https://api.le-systeme-solaire.net/rest/bodies/${props.planetSearch}`;
+
+    const fetchPlanetData = async () => {
+      const res = await fetch(url);
+      setPlanetData(await res.json());
+      setIsLoading(false);
+    };
+
     fetchPlanetData();
-  }, []);
+  }, [props.planetSearch]);
+
 
   return isLoading ? (
     "Loading.."
@@ -23,7 +24,10 @@ const FecthPlanetInfo = (props) => {
     <>
       <div className="container">
         <div className="row">
-          <p>{planetData.name}</p>
+          <p>{planetData.englishName}</p>
+          <p>{planetData.density}</p>
+          <p>{planetData.discoveryDate}</p>
+          <p>{planetData.discoveredBy}</p>
         </div>
       </div>
     </>

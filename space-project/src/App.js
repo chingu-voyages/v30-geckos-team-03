@@ -13,12 +13,25 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
+  const [query, setQuery] = useState("");
   const [planetSearch, setPlanetSearch] = useState("");
 
   const setLookupDate = (date) => {
     setDate((CurrentDate) => date);
   };
 
+  const planetKeyPress = (e) => {
+    if (e.key === "Enter") {
+      setPlanetSearch(query);
+    }
+  }
+
+  const planetOnClick = () => {
+    setPlanetSearch(query);
+  }
+  
+
+  
   return (
     <Router>
       <div className="App">
@@ -54,10 +67,13 @@ function App() {
                 fourthLinkName="Sign Up"
               />
               <Searchbar
+                className={"planetSearchbar form-control"}
                 topic={"Search a Planet for more info: "}
                 type={"text"}
-                onChange={(e) => setPlanetSearch(e.target.value)}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyPress={(e) => planetKeyPress(e)}
                 placeholder={"Search a Planet"}
+                onClick={planetOnClick}
               />
               <FecthPlanetInfo planetSearch={planetSearch} />
             </Route>
@@ -78,6 +94,7 @@ function App() {
                     fourthLinkName="Sign Up"
                   />
                   <Searchbar
+                  className={"astroSearchbar form-control"}
                     topic={
                       "Search for Asteroids based on their closest approach date to Earth:"
                     }
