@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 const FecthPlanetInfo = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [planetData, setPlanetData] = useState({});
@@ -17,17 +16,25 @@ const FecthPlanetInfo = (props) => {
     fetchPlanetData();
   }, [props.planetSearch]);
 
-
   return isLoading ? (
     "Loading.."
   ) : (
     <>
       <div className="container">
         <div className="row">
-          <p>{planetData.englishName}</p>
-          <p>{planetData.density}</p>
-          <p>{planetData.discoveryDate}</p>
-          <p>{planetData.discoveredBy}</p>
+          <h1>{planetData.englishName}</h1>
+        </div>
+        <div className="row">
+          <h3>Planet: {JSON.stringify(planetData.isPlanet)}</h3>
+        </div>
+        <div className="row">
+          <h4>Density: {planetData.density}</h4>
+        </div>
+        <div className="row">
+          <h5>Discovered: {planetData.discoveryDate}</h5>
+        </div>
+        <div className="row">
+          <h5>Discovered By: {planetData.discoveredBy}</h5>
         </div>
       </div>
     </>
